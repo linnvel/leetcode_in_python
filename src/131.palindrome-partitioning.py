@@ -11,39 +11,40 @@ class Solution(object):
         :type s: str
         :rtype: List[List[str]]
         """
-        def getIsPalindrome(s):
-            isPalindrome = [[False] * len(s) for _ in range(len(s))]
-            for i in range(len(s)):
-                isPalindrome[i][i] = True
-            for i in range(len(s) - 1):
-                isPalindrome[i][i + 1] = (s[i] == s[i + 1])
-            for j in range(1, len(s) // 2 + 1):
-                for i in range(len(s) - 2 * j):
-                    isPalindrome[i][i + 2 * j] = isPalindrome[i + 1][i + 2 * j - 1] and (s[i] == s[i + 2 * j])
-                    if i + 2 * j < len(s) - 1:
-                        isPalindrome[i][i + 2 * j + 1] = isPalindrome[i + 1][i + 2 * j] and (s[i] == s[i + 2 * j + 1])
-            return isPalindrome
 
-        isPalindrome = getIsPalindrome(s)
+        # preprocessing
+        def getPalindrome(s):
+            n = len(s)
+            palindrome = [[None for _ in range(n)] for _ in range(n)]
+            for i in range(n):
+                palindrome[i][i] = True
+                if i < n - 1:
+                    palindrome[i][i + 1] = s[i] == s[i + 1]
+            # i -> j is not correct
+            # for i in range(n - 1):
+            #     for j in range(i + 2, n):
 
-        def helper(s, startIndex, partition, results, isPalindrome):
+            # j -> i is correct
+            for j in range(2, n):
+                for i in range(j - 1):
+                    palindrome[i][j] = palindrome[i + 1][ j - 1] and s[i] == s[j]
+            return palindrome
+
+        def helper(s, startIndex, cur, results, palindrome):
             if startIndex == len(s):
-                results.append(partition[:])  # hard copy
+                results.append(cur[:])
             for i in range(startIndex, len(s)):
-                if not isPalindrome[startIndex][i]:
+                if not palindrome[startIndex][i]:
                     continue
-                sub = s[startIndex : i + 1]
-                partition.append(sub)
-                helper(s, i + 1, partition, results, isPalindrome)
-                partition.pop()
- 
+                cur.append(s[startIndex : i + 1])
+                helper(s, i + 1, cur, results, palindrome)
+                cur.pop()
+
+        palindromeMatrix = getPalindrome(s)
         results = []
-        partition = []
-        helper(s, 0, partition, results, isPalindrome)
-        return results
-
-
-                
+        cur = []
+        helper(s, 0, cur, results, palindromeMatrix)
+        return results   
 
         
 # @lc code=end
