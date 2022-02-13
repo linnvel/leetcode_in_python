@@ -4,7 +4,6 @@
 
 1. Backtracking
 
-    ```
     [78. Subsets](src/78.subsets.py)
     [90. Subsets II](src/90.subsets-ii.py)
     [46. Premutation](src/46.permutations.py)
@@ -18,6 +17,5 @@
     698. Partition to K Equal Sum Subsets (redo) memory optimization
     22. Generate Parentheses
     79. Word Search
-    ```
 
     Todo: DFS template
