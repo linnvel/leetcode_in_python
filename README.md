@@ -1,9 +1,15 @@
 # Leetcode Notes
 
-## Selected Questions 
+- [Leetcode Notes](#leetcode-notes)
+  - [1. Backtracking](#1-backtracking)
+    - [Selected Questions](#selected-questions)
+    - [Summary: DFS template](#summary-dfs-template)
 
-1. Backtracking
+---
 
+## 1. Backtracking
+
+### Selected Questions
     [78. Subsets](src/78.subsets.py)
 
     [90. Subsets II](src/90.subsets-ii.py)
@@ -30,12 +36,12 @@
     
     79. Word Search
 
-    **DFS template:**
+### Summary: DFS template
     
     ```python
     def helper(input, results, cur, startIndex):
         if return_condition:
-            results.append(cur[:])
+            results.append(cur[:])  # deep copy
             return
         for i in range(startIndex, len(input)):
             if continue_condition:
@@ -43,9 +49,9 @@
             update startIndex
             update cur
             helper(input, results, cur, startIndex)
-            recover cur # backtracking
+            recover cur  # backtracking
     
-    def main(input):
+    def mainFunction(input):
         results = []
         cur = []
         helper(input, results, cur, 0)
@@ -56,7 +62,7 @@
     
     1. How to update `startIndex`?
         
-        Obejective: distinguish two adjacent recursion 
+        Objective: distinguish two adjacent recursion 
         
         - `startIndex := i + 1`
             - `cur` has all or part of elements in `input`. Each element appears **at most once**.
