@@ -98,31 +98,32 @@ Notes:
 ### Selected Questions
 
 [94. Binary Tree Inorder Traversal](src/94.binary-tree-inorder-traversal.py)
+
 [144. Binary Tree Preorder Traversal](src/144.binary-tree-preorder-traversal.py)
 
 ```
-1.   Binary Tree Postorder Traversal
-2.   Binary Tree Paths
-3. Minimum Subtree
-4.   Balanced Bianry Tree
-5.    Maximum Average Subtree
-6.   Lowest Common Ancestor of a Binary Tree
-7.    Lowest Common Ancestor of a Binary Tree II
-8.    Lowest Common Ancestor of a Binary Tree III
-9.  Validate Binary Search Tree
-10.  Convert Binary Search Tree to Sorted Doubly Linked List
-11.  Flatten Binary Tree to Linked List
-12.  Binary Search Tree Iterator
-13.  Inorder Successor in BST
-14.  Insert into a Binary Search Tree
-15.  Same Tree
-16.  Binary Tree Level Order Traversal
+145. Binary Tree Postorder Traversal
+257. Binary Tree Paths
+1. Minimum Subtree
+110. Balanced Bianry Tree
+1120. Maximum Average Subtree
+236. Lowest Common Ancestor of a Binary Tree
+1644. Lowest Common Ancestor of a Binary Tree II
+1650. Lowest Common Ancestor of a Binary Tree III
+98. Validate Binary Search Tree
+426. Convert Binary Search Tree to Sorted Doubly Linked List
+114. Flatten Binary Tree to Linked List
+173. Binary Search Tree Iterator
+285. Inorder Successor in BST
+701. Insert into a Binary Search Tree
+100. Same Tree
+102. Binary Tree Level Order Traversal
 814, Binary Tree Pruning
-1.   Path Sum
-2.   Sum Root to Leaf Numbers
-3.   Most Frequent Subtree Sum
-4.   Binary Tree Maximum Path Sum
-5.   Majority Element
-6.   Search in a Binary Search Tree
-7.   Inorder Successor in BST
+112. Path Sum
+129. Sum Root to Leaf Numbers
+508. Most Frequent Subtree Sum
+124. Binary Tree Maximum Path Sum
+169. Majority Element
+700. Search in a Binary Search Tree
+285. Inorder Successor in BST
 ```
