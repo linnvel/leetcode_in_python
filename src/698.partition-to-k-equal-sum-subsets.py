@@ -11,26 +11,28 @@ class Solution:
         if sum(nums) % k != 0:
             return False
         targetSum = sum(nums) // k
-
-        def helper(curSum, seen):
-            print(curSum, seen)
-            if curSum == 0:
-                return True
-            for i in range(len(nums)):
-                if seen[i] == 1 or curSum < nums[i]:
-                    continue
-                seen[i] = 1
-                if helper(curSum - nums[i], seen):
-                    if sum(seen) == len(nums):
-                        return True
-                    else:
-                        return helper(targetSum, seen)
-                else:
-                    seen[i] = 0
-                    return False
-        
+        nums.sort(reverse=True)
+        print(nums)
         seen = [0 for _ in range(len(nums))]
-        return helper(targetSum, seen)     
+
+        # Solution 1: dfs (Time Limit Exceeded)
+        def helper(i, k, curSum):
+            print(i, k, curSum, seen)
+            if k == 0:
+                return True
+            elif curSum == 0:
+                return helper(0, k - 1, targetSum) # already find a subset: k -= 1, start from begining
+            for j in range(i, len(nums)):
+                if seen[j] == 1 or curSum < nums[j]:
+                    continue
+                seen[j] = 1
+                if helper(j + 1, k, curSum - nums[j]): # not complete current subset: k keeps same, start from j + 1
+                    return True
+                else:
+                    seen[j] = 0 # can't find valid subset, backtracking
+            return False
+        
+        return helper(0, k, targetSum)     
         
 # @lc code=end
 
