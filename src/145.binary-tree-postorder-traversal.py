@@ -11,64 +11,49 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+import re
+
+
 class Solution(object):
     def postorderTraversal(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
-        # # Iterative solution 1
-        # if root is None:
-        #     return []
-        # stack = [root]
-        # cnt = {}
+
+        # # Solution 1: recursion
         # results = []
-        # while stack:
-        #     cur = stack[-1]
+        # if root is None:
+        #     return results
+        # if root.left is not None:
+        #     results += self.postorderTraversal(root.left)
+        # if root.right is not None:
+        #     results += self.postorderTraversal(root.right)
+        # results.append(root.val)
+        # return results
 
-        #     # left branch
-        #     while cur.left is not None and cnt.get(cur, 0) < 1:
-        #         stack.append(cur.left)
-        #         cnt[cur] = 1
-        #         cur = cur.left
-        #     if cur not in cnt:
-        #         cnt[cur] = 1
-
-        #     # right node
-        #     if cnt[cur] < 2:
-        #         if cur.right is not None: 
-        #             stack.append(cur.right)
-        #         cnt[cur] += 1
-
-        #     # root node
-        #     else:
-        #         cur = stack.pop()
-        #         results.append(cur.val)
-
-        # iterative solution 2:
-        if root is None:
-            return []
-        stack = [root]
-        cur = root
-        lastvisited = None
+        # Solution 2: iteration
+        from collections import deque
         results = []
-
+        stack = deque()
+        lastVisited = None
+        while root is not None:
+            stack.append(root)
+            root = root.left
+        
         while stack:
-            cur = stack[-1]
-            # mask sure that the left branch haven't been visited
-            if lastvisited is None or lastvisited.left == cur or lastvisited.right == cur:
-                while cur.left is not None:
-                    stack.append(cur.left)
-                    cur = cur.left
-            if cur.right is None or cur.right == lastvisited:
-                stack.pop()
-                results.append(cur.val)
-            elif cur.right is not None:
-                stack.append(cur.right)
-            lastvisited = cur
-                
+            node = stack.pop()
+            if node.right is not None and lastVisited != node.right:
+                stack.append(node)
+                node = node.right
+                stack.append(node)
+                while node.left is not None:
+                    stack.append(node.left)
+                    node = node.left
+            else:
+                results.append(node.val)
+                lastVisited = node
         return results
-            
 
 
 

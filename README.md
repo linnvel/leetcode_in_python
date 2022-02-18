@@ -101,15 +101,22 @@ Notes:
 
 [144. Binary Tree Preorder Traversal](src/144.binary-tree-preorder-traversal.py)
 
+[145. Binary Tree Postorder Traversal](src/145.binary-tree-postorder-traversal.py)
+
+[257. Binary Tree Paths](src/257.binary-tree-paths.py)
+
+[596. Minimum Subtree (Lintcode)](src/L596.minimum-subtree.py)
+
+[110. Balanced Bianry Tree](src/110.balanced-binary-tree.py)
+
+1120 Maximum Average Subtree $
+
+[236. Lowest Common Ancestor of a Binary Tree](src/236.lowest-common-ancestor-of-a-binary-tree.py)
+
+1644 Lowest Common Ancestor of a Binary Tree II $
+
+1650 Lowest Common Ancestor of a Binary Tree III $
 ```
-145. Binary Tree Postorder Traversal
-257. Binary Tree Paths
-1. Minimum Subtree
-110. Balanced Bianry Tree
-1120. Maximum Average Subtree
-236. Lowest Common Ancestor of a Binary Tree
-1644. Lowest Common Ancestor of a Binary Tree II
-1650. Lowest Common Ancestor of a Binary Tree III
 98. Validate Binary Search Tree
 426. Convert Binary Search Tree to Sorted Doubly Linked List
 114. Flatten Binary Tree to Linked List

@@ -22,18 +22,17 @@ class Solution(object):
         """
         if root is None:
             return None
-        if p == root or q == root:
+        if root == p or root == q:
             return root
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
-        if left is not None and right is None:
-            return left
-        elif left is None and right is not None:
-            return right
-        elif left is not None and right is not None:
+        if left is not None and right is not None:
             return root
-        else:
-            return None
+        elif left is not None:
+            return left
+        elif right is not None:
+            return right
+            
         
 # @lc code=end
 
