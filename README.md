@@ -101,7 +101,7 @@ Notes:
 
 [144. Binary Tree Preorder Traversal](src/144.binary-tree-preorder-traversal.py)
 
-[145. Binary Tree Postorder Traversal](src/145.binary-tree-postorder-traversal.py)
+[145. Binary Tree Postorder Traversal *](src/145.binary-tree-postorder-traversal.py)
 
 [257. Binary Tree Paths](src/257.binary-tree-paths.py)
 
@@ -116,21 +116,32 @@ Notes:
 1644 Lowest Common Ancestor of a Binary Tree II $
 
 1650 Lowest Common Ancestor of a Binary Tree III $
+
+[98. Validate Binary Search Tree](src/98.validate-binary-search-tree.py)
+
+426 Convert Binary Search Tree to Sorted Doubly Linked List $
+
+[114. Flatten Binary Tree to Linked List](src/114.flatten-binary-tree-to-linked-list.py)
+
+[173. Binary Search Tree Iterator](src/173.binary-search-tree-iterator.py)
+
+285 Inorder Successor in BST $
+
+[701. Insert into a Binary Search Tree](src/701.insert-into-a-binary-search-tree.py)
+
+[100. Same Tree](src/100.same-tree.py)
+
+[102. Binary Tree Level Order Traversal](src/102.binary-tree-level-order-traversal.py)
+
+[814, Binary Tree Pruning](src/814.binary-tree-pruning.py)
+
+[112. Path Sum](src/112.path-sum.py)
+
 ```
-98. Validate Binary Search Tree
-426. Convert Binary Search Tree to Sorted Doubly Linked List
-114. Flatten Binary Tree to Linked List
-173. Binary Search Tree Iterator
-285. Inorder Successor in BST
-701. Insert into a Binary Search Tree
-100. Same Tree
-102. Binary Tree Level Order Traversal
-814, Binary Tree Pruning
-112. Path Sum
 129. Sum Root to Leaf Numbers
 508. Most Frequent Subtree Sum
+
 124. Binary Tree Maximum Path Sum
 169. Majority Element
 700. Search in a Binary Search Tree
-285. Inorder Successor in BST
 ```
