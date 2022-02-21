@@ -17,62 +17,58 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        # Solution 1: Time exceeded limit
+        # Solution 1: Time Limit Exceed
+        # def getAdjList(root, adjList):
+        #     if root not in adjList:
+        #         adjList[root] = []
+        #     if root.left is not None:
+        #         adjList[root].append(root.left)
+        #         adjList[root.left] = [root]
+        #         getAdjList(root.left, adjList)
+        #     if root.right is not None:
+        #         adjList[root].append(root.right)
+        #         adjList[root.right] = [root]
+        #         getAdjList(root.right, adjList)
+        
+        # def helper(root, seen, adjList, curSum):
+        #     seen.add(root)
+        #     curSum += root.val
+        #     maxSum = curSum
+        #     # print(maxSum)
+        #     # print([s.val for s in seen])
+        #     for node in adjList[root]:
+        #         if node in seen:
+        #             continue
+        #         maxSum = max(helper(node, seen, adjList, curSum), maxSum)
+        #     seen.remove(root)
+        #     curSum -= root.val
+        #     return maxSum
+        
+        # if root is None:
+        #     return
         # adjList = {}
-        # self.getAdjList(root, adjList)
-        # print([(k.val, [vv.val for vv in v]) for k, v in adjList.items()])
-        
-        # seen = {node: False for node in adjList.keys()}
-        # maxSum = [-float('inf'), 0]
-        # self.helper(adjList, seen, [], maxSum)
-        # return maxSum[0]
-        global maxSum 
+        # seen = set()
+        # getAdjList(root, adjList)
+        # # for node, adjNodes in adjList.items():
+        # #     print(node.val, " : ", [n.val for n in adjNodes])
+        # result = -float('inf')
+        # for node in adjList.keys():
+        #     result = max(result, helper(node, seen, adjList, 0))
+        # return result
+
+        # Solution 2: Post Tranverse
+        global maxSum
         maxSum = -float('inf')
-        
-        def maxPath(node):
-            global maxSum
-            if node is None:
+        def maxPath(root):
+            if root is None:
                 return 0
-            leftGain = max(maxPath(node.left), 0)
-            rightGain = max(maxPath(node.right), 0)
-            newPrice = node.val + leftGain + rightGain
-            maxSum = max(maxSum, newPrice)
-            return node.val + max(leftGain, rightGain)
-        
+            global maxSum
+            left = max(maxPath(root.left), 0)
+            right = max(maxPath(root.right), 0)
+            curPrice = root.val + left + right
+            maxSum = max(curPrice, maxSum)
+            return root.val + max(left, right)
+    
         maxPath(root)
         return maxSum
-
-
-    def getAdjList(self, root, adjList):
-        if root is None:
-            return 
-        if root not in adjList:
-            adjList[root] = []
-        if root.left is not None:
-            adjList[root].append(root.left)
-            adjList[root.left] = [root]
-        if root.right is not None:
-            adjList[root].append(root.right)
-            adjList[root.right] = [root]
-        self.getAdjList(root.left, adjList)
-        self.getAdjList(root.right, adjList)
-
-    def helper(self, adjList, seen, path, maxSum):
-        for node in adjList:
-            if seen[node]:
-                continue
-            if len(path) >= 1 and node not in adjList[path[-1]]:
-                continue
-            path.append(node)
-            seen[node] = True
-            maxSum[1] += node.val
-            maxSum[0] = max(maxSum[0], maxSum[1])
-            self.helper(adjList, seen, path, maxSum)
-            path.pop()
-            seen[node] = False
-            maxSum[1] -= node.val
-
-    
-        
 # @lc code=end
-

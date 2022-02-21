@@ -133,15 +133,16 @@ Notes:
 
 [102. Binary Tree Level Order Traversal](src/102.binary-tree-level-order-traversal.py)
 
-[814, Binary Tree Pruning](src/814.binary-tree-pruning.py)
+[814. Binary Tree Pruning](src/814.binary-tree-pruning.py)
 
 [112. Path Sum](src/112.path-sum.py)
 
-```
-129. Sum Root to Leaf Numbers
-508. Most Frequent Subtree Sum
+[129. Sum Root to Leaf Numbers](src/129.sum-root-to-leaf-numbers.py)
 
-124. Binary Tree Maximum Path Sum
-169. Majority Element
-700. Search in a Binary Search Tree
-```
+[508. Most Frequent Subtree Sum](src/508.most-frequent-subtree-sum.py)
+
+[124. Binary Tree Maximum Path Sum *](src/124.binary-tree-maximum-path-sum.py)
+
+[169. Majority Element *]
+
+[700. Search in a Binary Search Tree](src/700.search-in-a-binary-search-tree.py)
