@@ -143,6 +143,6 @@ Notes:
 
 [124. Binary Tree Maximum Path Sum *](src/124.binary-tree-maximum-path-sum.py)
 
-[169. Majority Element *]
+[169. Majority Element *](src/169.majority-element.py)
 
 [700. Search in a Binary Search Tree](src/700.search-in-a-binary-search-tree.py)
