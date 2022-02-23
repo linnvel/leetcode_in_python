@@ -2,16 +2,20 @@
 
 - [Leetcode Notes](#leetcode-notes)
   - [1. Backtracking](#1-backtracking)
-    - [Selected Questions](#selected-questions)
-    - [Summary: Backtracking template](#summary-backtracking-template)
+    - [1.1 Selected Questions](#11-selected-questions)
+    - [1.2 Backtracking template](#12-backtracking-template)
   - [2. Binary Tree & Divide Conquer](#2-binary-tree--divide-conquer)
-    - [Selected Questions](#selected-questions-1)
+    - [2.1 Selected Questions](#21-selected-questions)
+    - [2.2 Recursion in Binary Tree](#22-recursion-in-binary-tree)
+    - [2.3 Time Complexity Analysis](#23-time-complexity-analysis)
+  - [3. Binary Search](#3-binary-search)
+    - [3.1 Selected Questions](#31-selected-questions)
 
 ---
 
 ## 1. Backtracking
 
-### Selected Questions
+### 1.1 Selected Questions
 
 [78. Subsets](src/78.subsets.py)
 
@@ -39,7 +43,7 @@
 
 [79. Word Search](src/79.word-search.py)
 
-### Summary: Backtracking template
+### 1.2 Backtracking template
     
 ```python
 def helper(input, results, cur, startIndex):
@@ -95,7 +99,7 @@ Notes:
 
 ## 2. Binary Tree & Divide Conquer
 
-### Selected Questions
+### 2.1 Selected Questions
 
 [94. Binary Tree Inorder Traversal](src/94.binary-tree-inorder-traversal.py)
 
@@ -146,3 +150,89 @@ Notes:
 [169. Majority Element *](src/169.majority-element.py)
 
 [700. Search in a Binary Search Tree](src/700.search-in-a-binary-search-tree.py)
+
+[1534. Convert Bineary Search Tree to Doubly Linked List (Lintcode)]
+
+### 2.2 Recursion in Binary Tree
+
+1. Tranverse vs Divide Conquer
+   
+   - Both are recursion algorithms.
+   - Result in parameter vs result in return value
+   - Top down vs bottom up
+  
+2. Four Elements of Recursion
+    - 递归的定义：输入、输出、功能
+    - 递归的拆解：大问题拆成小问题（例如二叉树，想想整棵树的结果和左右子树的结果之间是什么关系）
+    - 递归的出口：何时返回（root is None，叶子结点）、返回值是什么
+    - 递归的调用：各参数的初始值
+
+### 2.3 Time Complexity Analysis
+   
+1. 通过`O(n)`的时间，把n的问题变成两个`n/2`的问题，复杂度是多少? `O(nlogn)`
+   
+   Example: merge sort, quick sort (average: `O(nlogn)`, worst: `O(n^2)`)
+   
+2. 通过`O(1)`的时间，把n的问题变成两个`n/2`的问题，复杂度是多少? `O(n)`
+
+   Example: balanced binary tree
+   
+3. Binary tree:
+   
+   Time: # of nodes x time for each node = `O(n)`
+   
+   Space: `O(h)`
+
+4. 树形分析法复杂度
+
+```
+        n             O(n)
+      /   \
+    n/2   n/2         O(n/2) + O(n/2) = O(n)
+    / \    / \
+  n/4 n/4 n/4 n/4     O(n)
+   ...     ...
+
+height: O(logn), each level: O(n) ==> total time: O(nlogn)
+```
+
+```
+         n
+      /  |  \
+    n/3 n/3 n/3     ==> O(nlogn)
+    /|\  /|\ /|\
+      ...  ...
+```
+
+```
+        n             O(1)
+      /   \
+    n/2   n/2         O(2)
+    / \    / \               ==> O(n)
+  n/4 n/4 n/4 n/4     O(4)
+   ...     ...
+                      O(n)
+```
+
+## 3. Binary Search
+
+[278. First Bad Version](src/278.first-bad-version.py)
+
+702 Search in a Sorted Array of Unknown Size $
+
+[74. Search a 2D Matrix](src/74.search-a-2-d-matrix.py)
+
+[34. Find First and Last Position of Element in Sorted Array](src/34.find-first-and-last-position-of-element-in-sorted-array.py)
+
+### 3.1 Selected Questions
+
+```
+153. Find Minimum in Rotated Sorted Array
+852. Peak Index in a Mountain Array
+162. Find Peak Element
+33. Search in a Rotated Sorted Array
+35. Search Insert Position
+69. Sqrt(x)
+240. Search a 2D Matrix II
+```
+
