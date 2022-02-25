@@ -10,12 +10,17 @@
     - [2.3 Time Complexity Analysis](#23-time-complexity-analysis)
   - [3. Binary Search](#3-binary-search)
     - [3.1 Selected Questions](#31-selected-questions)
+    - [3.2 Binary Search Template](#32-binary-search-template)
 
 ---
 
 ## 1. Backtracking
 
+<br/>
+
 ### 1.1 Selected Questions
+
+<br/>
 
 [78. Subsets](src/78.subsets.py)
 
@@ -43,7 +48,11 @@
 
 [79. Word Search](src/79.word-search.py)
 
+<br/>
+
 ### 1.2 Backtracking template
+
+<br/>
     
 ```python
 def helper(input, results, cur, startIndex):
@@ -99,7 +108,11 @@ Notes:
 
 ## 2. Binary Tree & Divide Conquer
 
+<br/>
+
 ### 2.1 Selected Questions
+
+<br/>
 
 [94. Binary Tree Inorder Traversal](src/94.binary-tree-inorder-traversal.py)
 
@@ -153,7 +166,11 @@ Notes:
 
 [1534. Convert Bineary Search Tree to Doubly Linked List (Lintcode)]
 
+<br/>
+
 ### 2.2 Recursion in Binary Tree
+
+<br/>
 
 1. Tranverse vs Divide Conquer
    
@@ -167,23 +184,33 @@ Notes:
     - 递归的出口：何时返回（root is None，叶子结点）、返回值是什么
     - 递归的调用：各参数的初始值
 
+<br/>
+
 ### 2.3 Time Complexity Analysis
+
+<br/>
    
 1. 通过`O(n)`的时间，把n的问题变成两个`n/2`的问题，复杂度是多少? `O(nlogn)`
    
    Example: merge sort, quick sort (average: `O(nlogn)`, worst: `O(n^2)`)
    
-2. 通过`O(1)`的时间，把n的问题变成两个`n/2`的问题，复杂度是多少? `O(n)`
+2. 通过`O(1)`的时间，把n的问题变成**两个**`n/2`的问题，复杂度是多少? `O(n)`
 
    Example: balanced binary tree
+
+3. 通过`O(n)`的时间，把n的问题变成`n/2`的问题，复杂度是多少? `O(n)`
    
-3. Binary tree:
+4. 通过`O(1)`的时间，把n的问题变成`n/2`的问题，复杂度是多少? `O(logn)`
+   
+   Example: [binary search](#3-binary-search)
+
+5. Binary tree:
    
    Time: # of nodes x time for each node = `O(n)`
    
    Space: `O(h)`
 
-4. 树形分析法复杂度
+6. 树形分析法复杂度
 
 ```
         n             O(n)
@@ -216,7 +243,11 @@ height: O(logn), each level: O(n) ==> total time: O(nlogn)
 
 ## 3. Binary Search
 
+<br/>
+
 ### 3.1 Selected Questions
+
+<br/>
 
 [278. First Bad Version](src/278.first-bad-version.py)
 
@@ -237,7 +268,79 @@ height: O(logn), each level: O(n) ==> total time: O(nlogn)
 [35. Search Insert Position](src/35.search-insert-position.py)
 
 [69. Sqrt(x)](src/69.sqrt-x.py)
+
+[240. Search a 2D Matrix II *](src/240.search-a-2-d-matrix-ii.py)
+
+<br/>
+
+### 3.2 Binary Search Template
+
+<br/>
+
+```python
+def binarySearch(nums, target):
+    if len(nums) == 0:
+        return -1
+
+    left, right = 0, len(nums) - 1
+    
+    # find any/first position
+    while left + 1 < right:
+        mid = left + (right - left) // 2
+        if nums[mid] < target:
+            left = mid
+        else:
+            right = mid
+
+    if nums[left] == target:
+        return left
+    elif nums[right] == target:
+        return right
+    else:
+        return -1
+
+    # or to find any/last position
+    while left + 1 < right:
+        mid = left + (right - left) // 2
+        if nums[mid] <= target:
+            left = mid
+        else:
+            right = mid
+    
+    if nums[right] == target:
+        return right
+    elif nums[left] == target:
+        return left
+    else:
+        return -1
 ```
-240. Search a 2D Matrix II *
-```
+
+Notes:
+
+1. Condition to stop loop: `left + 1 < right`
+   
+   `left < right` might end up with dead loop:
+   
+   E.g.
+   ```
+   left = 2, right = 3, mid = 2
+   left = mid = 2, right = 3, mid = 2
+   ...
+   ```
+
+2. How to update left & right (when `nums[mid] == target`)?
+   - Find any position: return
+   - Find the first position: `right = mid`
+   - Find the last position: `left = mid`
+
+3. `mid = left + (right - left) // 2` vs `mid = (left + right) // 2`
+
+   `left + right` might overflow if the values of `left` and `right` is very large.
+
+4. Return value: `left` or `right`?
+   - any position: any one `= target`
+   - first position: `left` first if `nums[left] = target`
+   - last position: `right` first if `nums[right] = target`
+
+<br/>
 
