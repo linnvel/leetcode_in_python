@@ -216,6 +216,8 @@ height: O(logn), each level: O(n) ==> total time: O(nlogn)
 
 ## 3. Binary Search
 
+### 3.1 Selected Questions
+
 [278. First Bad Version](src/278.first-bad-version.py)
 
 702 Search in a Sorted Array of Unknown Size $
@@ -224,15 +226,18 @@ height: O(logn), each level: O(n) ==> total time: O(nlogn)
 
 [34. Find First and Last Position of Element in Sorted Array](src/34.find-first-and-last-position-of-element-in-sorted-array.py)
 
-### 3.1 Selected Questions
+[153. Find Minimum in Rotated Sorted Array](src/153.find-minimum-in-rotated-sorted-array.py)
 
+[852. Peak Index in a Mountain Array](src/852.peak-index-in-a-mountain-array.py)
+
+[162. Find Peak Element *](src/162.find-peak-element.py)
+
+[33. Search in a Rotated Sorted Array](src/33.search-in-rotated-sorted-array.py)
+
+[35. Search Insert Position](src/35.search-insert-position.py)
+
+[69. Sqrt(x)](src/69.sqrt-x.py)
 ```
-153. Find Minimum in Rotated Sorted Array
-852. Peak Index in a Mountain Array
-162. Find Peak Element
-33. Search in a Rotated Sorted Array
-35. Search Insert Position
-69. Sqrt(x)
-240. Search a 2D Matrix II
+240. Search a 2D Matrix II *
 ```
 
