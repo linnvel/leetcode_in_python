@@ -11,6 +11,10 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+from collections import deque
+
+
 class Solution(object):
     def zigzagLevelOrder(self, root):
         """
@@ -19,30 +23,25 @@ class Solution(object):
         """
         if root is None:
             return []
-        
-        queue = [root]
-        left = True
-        order = []
-
-        while queue:
-            level = []
-            size = len(queue)
-            for i in range(size):
-                node = queue.pop(0)
-                if left:
-                    level.append(node.val)
+        results = []
+        q = deque([root])
+        flag = 1
+        while q:
+            qsize = len(q)
+            result = []
+            for i in range(qsize):
+                node = q.popleft()
+                if flag > 0:
+                    result.append(node.val)
                 else:
-                    level.insert(0, node.val)
+                    result = [node.val] + result
                 if node.left is not None:
-                    queue.append(node.left)
+                    q.append(node.left)
                 if node.right is not None:
-                    queue.append(node.right)
-            order.append(level)
-            left = not left
-        return order
-
-
-        
+                    q.append(node.right)
+            results.append(result)
+            flag = -flag
+        return results
         
 # @lc code=end
 

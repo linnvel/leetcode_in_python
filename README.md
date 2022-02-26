@@ -3,7 +3,7 @@
 - [Leetcode Notes](#leetcode-notes)
   - [1. Backtracking](#1-backtracking)
     - [1.1 Selected Questions](#11-selected-questions)
-    - [1.2 Backtracking template](#12-backtracking-template)
+    - [1.2 Backtracking Template](#12-backtracking-template)
   - [2. Binary Tree & Divide Conquer](#2-binary-tree--divide-conquer)
     - [2.1 Selected Questions](#21-selected-questions)
     - [2.2 Recursion in Binary Tree](#22-recursion-in-binary-tree)
@@ -11,6 +11,8 @@
   - [3. Binary Search](#3-binary-search)
     - [3.1 Selected Questions](#31-selected-questions)
     - [3.2 Binary Search Template](#32-binary-search-template)
+  - [4. BFS](#4-bfs)
+    - [4.1 Selected Questions](#41-selected-questions)
 
 ---
 
@@ -50,7 +52,7 @@
 
 <br/>
 
-### 1.2 Backtracking template
+### 1.2 Backtracking Template
 
 <br/>
     
@@ -343,4 +345,47 @@ Notes:
    - last position: `right` first if `nums[right] = target`
 
 <br/>
+
+## 4. BFS
+
+### 4.1 Selected Questions
+
+1. Serialize & Deserialize
+
+   [449. Serialize and Deserialize BST](src/449.serialize-and-deserialize-bst.py)
+   
+   [297. Serialize and Deserialize Binary Tree](src/297.serialize-and-deserialize-binary-tree.py)
+    
+2. Traversal
+
+   [107. Binary Tree Level Order Traversal II](src/107.binary-tree-level-order-traversal-ii.py)
+
+   [429. N-ary Tree Level Order Traversal](src/429.n-ary-tree-level-order-traversal.py)
+
+   [102. Binary Tree Level Order Traversal](src/102.binary-tree-level-order-traversal.py)
+
+   [103. Binary Tree Zigzag Level Order Traversal](src/103.binary-tree-zigzag-level-order-traversal.py)
+
+3. Graph
+
+   261 Graph Valid Tree $
+
+   [133. Clone Graph](src/133.clone-graph.py)
+
+4. Topological Sorting
+   
+```
+207. Course Scheduling
+210. Course Scheduling II
+444. Sequence Reconstruction
+```
+
+5. Matrix  
+```
+200. Number of Islands
+994. Rotting Oranges (Zombie in Matrix)
+542. 01 Matrix
+1197. Minimum Knight Move
+286. Walls ans Gates
+```
 

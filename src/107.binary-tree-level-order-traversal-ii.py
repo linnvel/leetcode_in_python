@@ -11,6 +11,10 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+from collections import deque
+
+
 class Solution(object):
     def levelOrderBottom(self, root):
         """
@@ -19,21 +23,20 @@ class Solution(object):
         """
         if root is None:
             return []
-        
-        queue = [root]
-        order = []
-        while queue:
-            size = len(queue)
-            level = []
-            for i in range(size):
-                node = queue.pop(0)
-                level.append(node.val)
+        results = []
+        q = deque([root])
+        while q:
+            qsize = len(q)
+            result = []
+            for i in range(qsize):
+                node = q.popleft()
+                result.append(node.val)
                 if node.left is not None:
-                    queue.append(node.left)
+                    q.append(node.left)
                 if node.right is not None:
-                    queue.append(node.right)
-            order.append(level)
-        return order[::-1]
+                    q.append(node.right)
+            results.append(result)
+        return results[::-1]
 
 # @lc code=end
 
