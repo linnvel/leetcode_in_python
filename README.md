@@ -374,11 +374,11 @@ Notes:
 
 4. Topological Sorting
    
-```
-207. Course Scheduling
-210. Course Scheduling II
-444. Sequence Reconstruction
-```
+   [207. Course Scheduling *](src/207.course-schedule.py)
+   
+   [210. Course Scheduling II](src/210.course-schedule-ii.py)
+   
+   444 Sequence Reconstruction $
 
 5. Matrix  
 ```
