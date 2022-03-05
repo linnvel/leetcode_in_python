@@ -381,11 +381,17 @@ Notes:
    444 Sequence Reconstruction $
 
 5. Matrix  
-```
-200. Number of Islands
-994. Rotting Oranges (Zombie in Matrix)
-542. 01 Matrix
-1197. Minimum Knight Move
-286. Walls ans Gates
-```
+
+   [200. Number of Islands](src/200.number-of-islands.py)
+
+   [598. Zombie in Matrix (Lintcode)](src/L598.zombie-in-matrix.py)
+
+   [542. 01 Matrix](src/542.01-matrix.py)
+
+   994 Rotting Oranges $
+
+   1197 Minimum Knight Move $
+   
+   286 Walls ans Gates $
+
 
