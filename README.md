@@ -368,7 +368,7 @@ Notes:
 
 3. Graph
 
-   261 Graph Valid Tree $
+   [261.Graph Valid Tree (Lintcode 178)](src/L178.graph-valid-tree.py)
 
    [133. Clone Graph](src/133.clone-graph.py)
 
@@ -378,11 +378,11 @@ Notes:
    
    [210. Course Scheduling II](src/210.course-schedule-ii.py)
    
-   444 Sequence Reconstruction $
+   [444.Sequence Reconstruction (Lintcode 605)](src/L605.sequence-reconstruction.py)
 
 5. Matrix  
 
-   [200. Number of Islands](src/200.number-of-islands.py)
+   [200. Number of Islands *](src/200.number-of-islands.py)
 
    [598. Zombie in Matrix (Lintcode)](src/L598.zombie-in-matrix.py)
 
