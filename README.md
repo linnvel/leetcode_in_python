@@ -13,6 +13,9 @@
     - [3.2 Binary Search Template](#32-binary-search-template)
   - [4. BFS](#4-bfs)
     - [4.1 Selected Questions](#41-selected-questions)
+    - [4.2 BFS Template](#42-bfs-template)
+  - [5. DFS](#5-dfs)
+    - [5.1 Selected Questions](#51-selected-questions)
 
 ---
 
@@ -392,6 +395,69 @@ Notes:
 
    1197 Minimum Knight Move $
    
-   286 Walls ans Gates $
+   286 Walls and Gates $
 
 
+### 4.2 BFS Template
+
+```python
+from collections import queue
+def bfs(input):
+    # 1. Initialize graph, indegree ...
+    # 2. Get start nodes
+    # 3. BFS
+    queue = deque([startNodes])
+    seen = {startNodes}  # optional
+    while queue:
+        qsize = len(queue)  # optional, only for level tranversal
+        for _ in range(qsize):  # optional, only for level tranversal
+            node = queue.popleft()
+            for neighbor in all neighbors of node:
+                if some_condition:  # optional
+                    queue.append(neighbor)
+                    seen.add(startNodes)
+```
+
+1. How to find neighbors?
+   - Binary tree: `[node.left, node.right]`
+   - Graph: `adjacent_list[node]`
+   - Matrix: direction vector
+      ```python
+      dx = [-1, 0, 0, 1]
+      dy = [0, -1, 1, 0]
+      for i in range(4):
+          x = x0 + dx[i]
+          y = y0 + dy[i]
+          ...
+      ```
+
+2. `seen` 
+   - Binary tree: not necessary
+   - Graph: hashset
+   - Topological sorting: indegree
+   - Matrix: mark original list
+
+3. When to use BFS?
+   - Graph traversal 
+     - Connected area
+     - Level traversal 
+     - Topological Sorting
+   - Shortest path in simple graph (unweighted and undirected)
+
+<br/>
+
+## 5. DFS
+
+### 5.1 Selected Questions
+
+```
+77. Combination
+784. Letter Case Permutation
+314. Binary Tree Vertical Order Traversal
+364. Nested List Weight Sum II
+339. Nested List Weight Sum
+698 Partition to K Equal Sum Subsets ***
+51. N Queens
+127. Word Ladder
+126. Word Ladder II
+```
