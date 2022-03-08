@@ -452,13 +452,18 @@ def bfs(input):
 
 [77. Combination](src/77.combinations.py)
 
+[784. Letter Case Permutation](src/784.letter-case-permutation.py)
+
+314 Binary Tree Vertical Order Traversal $
+
+364 Nested List Weight Sum II $
+
+339 Nested List Weight Sum $
+
+[51. N Queens](src/51.n-queens.py)
+
 ```
-784. Letter Case Permutation
-314. Binary Tree Vertical Order Traversal
-364. Nested List Weight Sum II
-339. Nested List Weight Sum
 698 Partition to K Equal Sum Subsets ***
-51. N Queens
 127. Word Ladder
 126. Word Ladder II
 ```
