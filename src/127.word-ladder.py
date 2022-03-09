@@ -6,7 +6,7 @@
 
 # @lc code=start
 
-from collections import defaultdict, deque
+from collections import deque
 
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
@@ -16,47 +16,40 @@ class Solution(object):
         :type wordList: List[str]
         :rtype: int
         """
-
-        queue = deque([beginWord])
-        visited = {}
-        L = len(beginWord)
-        intermediates = defaultdict(list)
-
-        # preprocessing
+        def getPattern(word, i):
+            return word[:i] + "*" + word[i + 1:]
+            
+        # Get adjList = {pattern: [words]}
+        wordLen = len(beginWord)
+        adjList = {}
         for word in wordList:
-            for i in range(L):
-                state = word[:i] + "*" + word[i+1:]
-                intermediates[state].append(word)
-
-        cnt = 0
+            for i in range(wordLen):
+                pattern = getPattern(word, i)
+                if pattern in adjList:
+                    adjList[pattern].append(word)
+                else:
+                    adjList[pattern] = [word]
+        
+        queue = deque([beginWord])
+        seen = {beginWord}
+        count = 1
         while queue:
-            if len(visited) == len(wordList):
-                break
-            size = len(queue)
-            cnt += 1
-            for i in range(size):
+            qsize = len(queue)
+            count += 1
+            for _ in range(qsize):
                 word = queue.popleft()
-                for j in range(len(word)):
-                    state = word[:j] + "*" + word[j+1:]
-                    if state in intermediates:
-                        for nextWord in intermediates[state]:
-                            if nextWord == endWord:
-                                return cnt + 1
-                            if nextWord not in visited:
-                                queue.append(nextWord)
-                                visited[nextWord] = True
-                
+                for i in range(wordLen):
+                    pattern = getPattern(word, i)
+                    if pattern not in adjList:
+                        continue
+                    for neighbor in adjList[pattern]:
+                        if neighbor == endWord:
+                            return count
+                        if neighbor in seen:
+                            continue
+                        queue.append(neighbor)
+                        seen.add(neighbor)
         return 0
-    
-    # Time Limit Exceeded
-    # def isSingleDiff(self, word1, word2):
-    #     if len(word1) != len(word2):
-    #         return False
-    #     cnt = 0
-    #     for i in range(len(word1)):
-    #         if word1[i] != word2[i]:
-    #             cnt += 1
-    #     return cnt == 1
 
 
         

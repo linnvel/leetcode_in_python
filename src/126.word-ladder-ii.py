@@ -7,6 +7,7 @@
 # @lc code=start
 
 from collections import defaultdict, deque
+from webbrowser import get
 
 
 class Solution(object):
@@ -17,61 +18,86 @@ class Solution(object):
         :type wordList: List[str]
         :rtype: List[List[str]]
         """
-    
-        L = len(beginWord)
-        intermediates = defaultdict(list)
+        def getPattern(word, i):
+            return word[:i] + "*" + word[i + 1 :]
+        
+        adjList = {}
+        wordLen = len(beginWord)
+        for word in wordList + [beginWord]:
+            for i in range(wordLen):
+                pattern = getPattern(word, i)
+                if pattern in adjList:
+                    adjList[pattern].append(word)
+                else:
+                    adjList[pattern] = [word]
+        
+        # # Solution 1: DFS (Time Limit Exceed)
+        # def helper(paths, path, seen, count):
+        #     global minCount
+        #     if count > minCount:
+        #         return
+        #     word = path[-1]
+        #     if word == endWord:
+        #         paths.append(path[:])
+        #         minCount = min(minCount, count)
+        #         return
+        #     for i in range(wordLen):
+        #         pattern = getPattern(word, i)
+        #         for neighbor in adjList.get(pattern, []):
+        #             if neighbor in seen:
+        #                 continue
+        #             seen.add(neighbor)
+        #             helper(paths, path + [neighbor], seen, count + 1)
+        #             seen.remove(neighbor)
+                 
+        # paths = []
+        # global minCount
+        # minCount = len(wordList)
+        # helper(paths, [beginWord], set(), 1)
+        # return [path for path in paths if len(path) == minCount]
 
-        # preprocessing
-        for word in wordList + ['hit']:
-            for i in range(L):
-                state = word[:i] + "*" + word[i+1:]
-                intermediates[state].append(word)
-
-        # bfs to find distance to endWord
+        # Solution 2: BFS + DFS
         queue = deque([endWord])
         distance = {endWord: 0}
         count = 0
         while queue:
-            # if len(distance) == len(wordList):
-            #     break
-            size = len(queue)
             count += 1
-            for i in range(size):
+            qsize = len(queue)
+            for _ in range(qsize):
                 word = queue.popleft()
-                for nextWord in self.findNeighbor(word, intermediates):
-                    if nextWord not in distance:
-                        queue.append(nextWord)
-                        distance[nextWord] = count
-        
-        # dfs: to find all shortest paths
-        results = []
+                for i in range(wordLen):
+                    pattern = getPattern(word, i)
+                    for neighbor in adjList.get(pattern, []):
+                        if neighbor in distance:
+                            continue
+                        if neighbor == beginWord:
+                            distance[beginWord] = count
+                        queue.append(neighbor)
+                        distance[neighbor] = count
         if beginWord not in distance:
-            return results
-        path = [beginWord]
-        self.dfs(intermediates, distance, endWord, path, results)
-        return results
-    
-    def dfs(self, intermediates, distance, endWord, path, results):
-        # print(path, results)
-        currentWord = path[-1]
-        currentDist = distance[currentWord]
-        if currentWord == endWord:
-            results.append(path[:])
-            return
-        for word in self.findNeighbor(currentWord, intermediates):
-            dist = distance.get(word, float('inf'))
-            if dist == currentDist - 1:
-                path.append(word)
-                self.dfs(intermediates, distance, endWord, path, results)
-                path.pop()
-    
-    def findNeighbor(self, word, intermediates):
-        neighbors = []
-        for j in range(len(word)):
-            state = word[:j] + "*" + word[j+1:]
-            if state in intermediates:
-                neighbors += [w for w in intermediates[state] if w != word]
-        return neighbors
+            return []
+        
+        def dfs(paths, path, remainCount, seen):
+            if remainCount < 0:
+                return
+            word = path[-1]
+            if distance[word] != remainCount:
+                return
+            if word == endWord:
+                paths.append(path[:])
+                return
+            for i in range(wordLen):
+                pattern = getPattern(word, i)
+                for neighbor in adjList.get(pattern, []):
+                    if neighbor in seen:
+                        continue
+                    seen.add(neighbor)
+                    dfs(paths, path + [neighbor], remainCount - 1, seen)
+                    seen.remove(neighbor)
+        
+        paths = []
+        dfs(paths, [beginWord], distance[beginWord], {beginWord})
+        return paths                   
         
 # @lc code=end
 
