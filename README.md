@@ -464,11 +464,10 @@ def bfs(input):
 
 [127. Word Ladder](src/127.word-ladder.py)
 
-[126. Word Ladder II *](src/126.word-ladder-ii.py)
+[126. Word Ladder II **](src/126.word-ladder-ii.py)
 
-```
-698 Partition to K Equal Sum Subsets ***
-37. Sudoku Solver
-``
+[37. Sudoku Solver *](src/37.sudoku-solver.py)
+
+[698 Partition to K Equal Sum Subsets ***](src/698.partition-to-k-equal-sum-subsets.py)
 
 Todo: BFS/DFS Complexity Analysis
