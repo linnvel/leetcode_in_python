@@ -16,6 +16,9 @@
     - [4.2 BFS Template](#42-bfs-template)
   - [5. DFS](#5-dfs)
     - [5.1 Selected Questions](#51-selected-questions)
+    - [5.2 BFS/DFS Complexity Analysis](#52-bfsdfs-complexity-analysis)
+  - [6. Linked List](#6-linked-list)
+    - [6.1 Selected Questions](#61-selected-questions)
 
 ---
 
@@ -470,4 +473,47 @@ def bfs(input):
 
 [698 Partition to K Equal Sum Subsets ***](src/698.partition-to-k-equal-sum-subsets.py)
 
-Todo: BFS/DFS Complexity Analysis
+### 5.2 BFS/DFS Complexity Analysis
+
+- DFS时间复杂度：$O(答案总数\times 构造每个答案的时间)$
+  - Subsets: $O(2^n \times n)$
+  - Permutation: $O(n! \times n)$ (worst scenario)
+  - Graph traversal: O(V+E)
+  
+  Ref: https://www.cnblogs.com/hi3254014978/p/12627861.html
+
+- BFS
+  - Time: 
+    - Adjacent List: O(V+E)
+    - Adjacent Matrix: O(V^2)
+  - Space: `O(V)` to store queue
+
+<br/>
+
+## 6. Linked List
+
+### 6.1 Selected Questions
+
+[25. Reverse Nodes in k-Group](src/25.reverse-nodes-in-k-group.py)
+
+[206. Reverse Linked List](src/206.reverse-linked-list.py)
+
+[92. Reverse Linked List II](src/92.reverse-linked-list-ii.py)
+
+[86. Partition List *](src/86.partition-list.py)
+
+[21. Merge Two Sorted List](src/21.merge-two-sorted-lists.py)
+
+[24. Swap Nodes in Pairs](src/24.swap-nodes-in-pairs.py)
+
+```
+143. Reorder List
+61. Rotate List
+138. Copy List with Random Pointer (with/without extra space)
+141. Linked List Cycle
+142. Linked List Cycle II
+148. Sort List
+109. Converted Sorted List to Binary Search Tree
+2095. Delete the Middle Node of a Linked List
+237. Delete Node in a Linked List
+```

@@ -18,25 +18,20 @@ class Solution(object):
         :rtype: Optional[ListNode]
         """
         dummy = ListNode(0)
-        cur = dummy
+        node = dummy
         while list1 is not None and list2 is not None:
-            if list1.val < list2.val:
-                cur.next = list1
+            if list1.val <= list2.val:
+                node.next = list1
                 list1 = list1.next
             else:
-                cur.next = list2
+                node.next = list2
                 list2 = list2.next
-            cur = cur.next
-        while list1 is not None:
-            cur.next = list1
-            list1 = list1.next
-            cur = cur.next
-        while list2 is not None:
-            cur.next = list2
-            list2 = list2.next
-            cur = cur.next
+            node = node.next
+        if list1 is not None:
+            node.next = list1
+        elif list2 is not None:
+            node.next = list2
         return dummy.next
-
 
         
 # @lc code=end

@@ -17,26 +17,21 @@ class Solution(object):
         :type x: int
         :rtype: ListNode
         """
-        if head is None:
-            return head
         small_dummy = ListNode(0)
-        sm = small_dummy
         large_dummy = ListNode(0)
-        lg = large_dummy
+        small = small_dummy
+        large = large_dummy
         while head is not None:
             if head.val < x:
-                sm.next = ListNode(head.val)
-                sm = sm.next
+                small.next = head
+                small = small.next
             else:
-                lg.next = ListNode(head.val)
-                lg = lg.next
+                large.next = head
+                large = large.next
             head = head.next
-        sm.next = large_dummy.next
+        small.next = large_dummy.next
+        large.next = None
         return small_dummy.next
-
-
-
-
 
         
 # @lc code=end

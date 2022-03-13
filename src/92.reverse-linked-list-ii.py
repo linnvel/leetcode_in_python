@@ -18,40 +18,25 @@ class Solution(object):
         :type right: int
         :rtype: ListNode
         """
-        if head is None:
-            return None
-        if right - left < 1:
-            return head
+        i = 1
         dummy = ListNode(0)
         dummy.next = head
-        start = dummy
-        curt = head
-        i = 1
+        node = dummy
         while i < left:
-            curt = curt.next
-            start = start.next
+            node = node.next
+            head = head.next
             i += 1
-        nl = curt
+        prev = head
+        cur = head.next
         while i < right:
-            curt = curt.next
+            tmp = cur.next
+            cur.next = prev
+            prev = cur
+            cur = tmp
             i += 1
-        nr = curt
-        nrplus = nr.next
-
-        prev = nl
-        curt = nl.next
-        while curt != nrplus:
-            temp = curt.next
-            curt.next = prev
-            prev = curt
-            curt = temp
-
-        
-        start.next = nr
-        nl.next = nrplus
+        head.next = cur
+        node.next = prev
         return dummy.next
-
-
         
 # @lc code=end
 
