@@ -19,27 +19,26 @@ class Solution(object):
         """
         if head is None:
             return head
-        dummy = ListNode(0)
-        dummy.next = head
-        cur = head
-        l = 1
-        while cur.next is not None:
-            cur = cur.next
-            l += 1
-        if k % l == 0:
+        fast = head
+        nList = 0
+        while k > 0:
+            fast = fast.next
+            nList += 1
+            k -= 1
+            if fast is None:
+                fast = head
+                k = k % nList
+        slow = head
+        while fast.next is not None:
+            slow = slow.next
+            fast = fast.next
+        if slow.next is not None:
+            newHead = slow.next 
+            slow.next = None
+            fast.next = head
+            return newHead
+        else:
             return head
-        cur.next = head
-        
-        prev = dummy
-        for _ in range(l - k%l):
-            prev = prev.next
-
-        tmp = prev.next
-        dummy.next = tmp
-        prev.next = None
-
-        return dummy.next
-        
 
         
 # @lc code=end

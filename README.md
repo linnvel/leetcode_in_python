@@ -506,10 +506,13 @@ def bfs(input):
 
 [24. Swap Nodes in Pairs](src/24.swap-nodes-in-pairs.py)
 
+[143. Reorder List](src/143.reorder-list.py)
+
+[61. Rotate List](src/61.rotate-list.py)
+
+[138. Copy List with Random Pointer (with/without extra space)](src/138.copy-list-with-random-pointer.py)
+
 ```
-143. Reorder List
-61. Rotate List
-138. Copy List with Random Pointer (with/without extra space)
 141. Linked List Cycle
 142. Linked List Cycle II
 148. Sort List
