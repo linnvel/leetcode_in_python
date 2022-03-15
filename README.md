@@ -19,6 +19,8 @@
     - [5.2 BFS/DFS Complexity Analysis](#52-bfsdfs-complexity-analysis)
   - [6. Linked List](#6-linked-list)
     - [6.1 Selected Questions](#61-selected-questions)
+  - [6. Linked List](#6-linked-list-1)
+    - [6.1 Selected Questions](#61-selected-questions-1)
 
 ---
 
@@ -494,7 +496,7 @@ def bfs(input):
 
 ### 6.1 Selected Questions
 
-[25. Reverse Nodes in k-Group](src/25.reverse-nodes-in-k-group.py)
+[25. Reverse Nodes in k-Group *](src/25.reverse-nodes-in-k-group.py)
 
 [206. Reverse Linked List](src/206.reverse-linked-list.py)
 
@@ -510,13 +512,37 @@ def bfs(input):
 
 [61. Rotate List](src/61.rotate-list.py)
 
-[138. Copy List with Random Pointer (with/without extra space)](src/138.copy-list-with-random-pointer.py)
+[138. Copy List with Random Pointer (with/without extra space)*](src/138.copy-list-with-random-pointer.py)
+
+[141. Linked List Cycle](src/141.linked-list-cycle.py)
+
+[142. Linked List Cycle II](src/142.linked-list-cycle-ii.py)
+
+[148. Sort List](src/148.sort-list.py)
+
+[109. Converted Sorted List to Binary Search Tree](src/109.convert-sorted-list-to-binary-search-tree.py)
+
+[2095. Delete the Middle Node of a Linked List](src/2095.delete-the-middle-node-of-a-linked-list.py)
+
+[237. Delete Node in a Linked List *](src/237.delete-node-in-a-linked-list.py)
+
+<br/>
+
+## 6. Linked List
+
+### 6.1 Selected Questions
 
 ```
-141. Linked List Cycle
-142. Linked List Cycle II
-148. Sort List
-109. Converted Sorted List to Binary Search Tree
-2095. Delete the Middle Node of a Linked List
-237. Delete Node in a Linked List
+88. Merge Sorted Array
+349. Intersection of Two Arrays
+4. Median of Two Sorted Arrays
+215. Kth Largest Element in an Array
+53. Maximum Subarray
+523. Continuous Subarray Sum
+560. Subarray Sum Equals K
+283. Move Zeros
+27. Remove Element
+26. Remove Duplicates from Sorted Array
+125. Valid Panlindrome
+680. Valid Panlindrome II
 ```

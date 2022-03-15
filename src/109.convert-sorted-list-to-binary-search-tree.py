@@ -23,24 +23,21 @@ class Solution(object):
         :rtype: TreeNode
         """
         if head is None:
-            return None
+            return
         if head.next is None:
             return TreeNode(head.val)
-        
-        slow = head
-        fast = head.next
-        while fast.next is not None and fast.next.next is not None:
+        dummy = ListNode(0, head)
+        prev = dummy
+        slow = fast = head
+        # fast = head.next
+        while fast is not None and fast.next is not None:
             slow = slow.next
             fast = fast.next.next
-        
-        mid = slow.next
-        root = TreeNode(mid.val)
-        right = mid.next
-        slow.next = None
-        left = head
-        root.left = self.sortedListToBST(left)
-        root.right = self.sortedListToBST(right)
-        return root
-        
+            prev = prev.next
+        root = TreeNode(slow.val)
+        prev.next = None
+        root.left = self.sortedListToBST(dummy.next) 
+        root.right = self.sortedListToBST(slow.next)
+        return root     
 # @lc code=end
 
