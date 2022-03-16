@@ -19,7 +19,7 @@
     - [5.2 BFS/DFS Complexity Analysis](#52-bfsdfs-complexity-analysis)
   - [6. Linked List](#6-linked-list)
     - [6.1 Selected Questions](#61-selected-questions)
-  - [6. Linked List](#6-linked-list-1)
+  - [6. Array](#6-array)
     - [6.1 Selected Questions](#61-selected-questions-1)
 
 ---
@@ -518,7 +518,7 @@ def bfs(input):
 
 [142. Linked List Cycle II](src/142.linked-list-cycle-ii.py)
 
-[148. Sort List](src/148.sort-list.py)
+[148. Sort List](src/148.sort-list.py) (Todo: quick sort)
 
 [109. Converted Sorted List to Binary Search Tree](src/109.convert-sorted-list-to-binary-search-tree.py)
 
@@ -528,7 +528,7 @@ def bfs(input):
 
 <br/>
 
-## 6. Linked List
+## 6. Array
 
 ### 6.1 Selected Questions
 
