@@ -12,7 +12,17 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
- 
+        # Solution 1: Hash set
+        nums = set(nums1)
+        results = set()
+        for num in nums2:
+            if num in nums:
+                results.add(num)
+        return list(results)
+
+        # Solution 2: binary search
+        # Solution 3: merge two sorted array
+
 
         
 # @lc code=end

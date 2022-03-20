@@ -532,10 +532,13 @@ def bfs(input):
 
 ### 6.1 Selected Questions
 
+[88. Merge Sorted Array](src/88.merge-sorted-array.py)
+
+[349. Intersection of Two Arrays](src/349.intersection-of-two-arrays.py)
+
+[4. Median of Two Sorted Arrays](src/4.median-of-two-sorted-arrays.py)
+
 ```
-88. Merge Sorted Array
-349. Intersection of Two Arrays
-4. Median of Two Sorted Arrays
 215. Kth Largest Element in an Array
 53. Maximum Subarray
 523. Continuous Subarray Sum

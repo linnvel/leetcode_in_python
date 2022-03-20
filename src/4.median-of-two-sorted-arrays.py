@@ -12,51 +12,57 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: float
         """
-        m = len(nums1)
-        n = len(nums2)
-        if (m + n) % 2 != 0:
-            k = (m + n) // 2 + 1
-            return self.findkth(nums1, nums2, k)
-        else:
-            k = (m + n) // 2
-            val1 = self.findkth(nums1, nums2, k)
-            val2 = self.findkth(nums1, nums2, k + 1)
-            # print(val1, val2, k)
-            return (val1 + val2) * 1.0 / 2
+        # l1, r1 = 0, len(nums1) - 1
+        # l2, r2 = 0, len(nums2) - 1
+        # while l1 <= r1 and l2 <= r2:
+        #     mid1 = (l1 + r1) // 2
+        #     mid2 = (l2 + r2) // 2
+        #     if nums1[mid1] == nums2[mid2]:
+        #         return nums1[mid1]
+        #     elif nums1[mid1] < nums2[mid2]:
+        #         l1 = mid1
+        #         r2 = mid2
+        #     else:
+        #         r1 = mid1
+        #         l2 = mid2
+        # if l1 <= r1:
+        #     if (r1 - l1) % 2 == 0:
+        #         return nums1[(l1 + r1) // 2]
+        #     else:
+        #         return (nums1[(l1 + r1) // 2] + nums1[(l1 + r1) // 2 + 1]) / 2
+        # elif l2 <= r2:
+        #     if (r2 - l2) % 2 == 0:
+        #         return nums2[(l2 + r2) // 2]
+        #     else:
+        #         return (nums2[(l2 + r2) // 2] + nums2[(l2 + r2) // 2 + 1]) / 2
 
+        # Solution 1: merge --> return nums[(m + n) // 2]
+        # Time complexity: O(m + n)
 
-    # def findkandkplus(self, nums1, nums2, k):
-    #     if len(nums1) == 0:
-    #         return nums2[k - 1], nums2[k] if k >= 1 else None, nums2[k]
-    #     if len(nums2) == 0:
-    #         return nums1[k - 1], nums1[k] if k >= 1 else None, nums1[k]
-    #     if k == 0:
-    #         return None, min(nums1[0], nums2[0])
-    #     if k == 1:
-    #         if nums1[0] <= nums2[0]:
-    #             return nums1[0], min(nums1[1], nums2[0])
-    #         else:
-    #             return nums2[0], min(nums1[0], nums2[1])
-    #     if nums1[k // 2 - 1] <= nums2[k // 2 - 1]:
-    #         return self.findkandkplus(nums1[k // 2:], nums2, k - k//2)
-    #     else:
-    #         return self.findkandkplus(nums1, nums2[k//2:], k - k//2)
-
-    def findkth(self, nums1, nums2, k):
-        if len(nums1) == 0:
-            return nums2[k - 1]
-        if len(nums2) == 0:
-            return nums1[k - 1]
-        if k == 1:
-            return min(nums1[0], nums2[0])
+        # Solution 2: find kth largest --> return findkth((m + n) // 2)
+        # Binary search: k --> k/2 --> k/4 ...
+        # Time complexith: O(logk)
+        def findKth(nums1, nums2, k):
+            if len(nums1) == 0:
+                return nums2[k - 1]
+            if len(nums2) == 0:
+                return nums1[k - 1]
+            if k == 1:
+                return min(nums1[0], nums2[0])
+            index1 = min(len(nums1) - 1, k // 2 - 1)
+            index2 = min(len(nums2) - 1, k // 2 - 1)
+            if nums1[index1] < nums2[index2]:
+                return findKth(nums1[index1 + 1:], nums2, k - index1 - 1)
+            else:
+                return findKth(nums1, nums2[index2 + 1:], k - index2 - 1)
         
-        index1 = min(k // 2 - 1, len(nums1) - 1)
-        index2 = min(k // 2 - 1, len(nums2) - 1)
-        if nums1[index1] <= nums2[index2]:
-            return self.findkth(nums1[index1 + 1:], nums2, k - (index1 + 1))
+        m, n = len(nums1), len(nums2)
+        if (m + n) % 2 == 0:
+            median1 = findKth(nums1, nums2, (m + n) // 2 +1)
+            median2 = findKth(nums1, nums2, (m + n) // 2)
+            return (median1 + median2) / 2.0
         else:
-            return self.findkth(nums1, nums2[index2 + 1:], k - (index2 + 1))
-
+            return findKth(nums1, nums2, (m + n) // 2 + 1)
 
 # @lc code=end
 
