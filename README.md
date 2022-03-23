@@ -540,13 +540,19 @@ def bfs(input):
 
 [215. Kth Largest Element in an Array](src/215.kth-largest-element-in-an-array.py)
 
+[53. Maximum Subarray](src/53.maximum-subarray.py)
+
+[523. Continuous Subarray Sum*](src/523.continuous-subarray-sum.py)
+
+[560. Subarray Sum Equals K*](src/560.subarray-sum-equals-k.py)
+
+[283. Move Zeros](src/283.move-zeroes.py)
+
+[27. Remove Element](src/27.remove-element.py)
+
+[26. Remove Duplicates from Sorted Array](src/26.remove-duplicates-from-sorted-array.py)
+
 ```
-53. Maximum Subarray
-523. Continuous Subarray Sum
-560. Subarray Sum Equals K
-283. Move Zeros
-27. Remove Element
-26. Remove Duplicates from Sorted Array
 125. Valid Panlindrome
 680. Valid Panlindrome II
 ```
