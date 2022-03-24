@@ -19,8 +19,9 @@
     - [5.2 BFS/DFS Complexity Analysis](#52-bfsdfs-complexity-analysis)
   - [6. Linked List](#6-linked-list)
     - [6.1 Selected Questions](#61-selected-questions)
-  - [6. Array](#6-array)
-    - [6.1 Selected Questions](#61-selected-questions-1)
+  - [7. Array](#7-array)
+    - [7.1 Selected Questions](#71-selected-questions)
+    - [7.2 Array Question Summary](#72-array-question-summary)
 
 ---
 
@@ -528,9 +529,9 @@ def bfs(input):
 
 <br/>
 
-## 6. Array
+## 7. Array
 
-### 6.1 Selected Questions
+### 7.1 Selected Questions
 
 [88. Merge Sorted Array](src/88.merge-sorted-array.py)
 
@@ -552,9 +553,63 @@ def bfs(input):
 
 [26. Remove Duplicates from Sorted Array](src/26.remove-duplicates-from-sorted-array.py)
 
+[125. Valid Palindrome](src/125.valid-palindrome.py)
+
+[680. Valid Palindrome II *](src/680.valid-palindrome-ii.py)
+
+Valid Palindrome III $
+
+[1. Two Sum](src/1.two-sum.py)
+
+[167. Two Sum II - Input Array Is Sorted](src/167.two-sum-ii-input-array-is-sorted.py)
+
+[607. Two Sum III - Data Structure Design (Lintcode) *](src/L607.two-sum-iii-data-structure-design.py)
+
+[587. Two Sum - Unique pairs (Lintcode) *](src/L587.two-sum-unique-pairs.py)
+
+1099 Two Sum Less Than K $
+
+[609. Two Sum - Less than or equal to target (Lintcode)](src/L609.two-sum-less-than-or-equal-to-target.py)
+
+[610. Two Sum - difference equals to target (Lintcode)](src/L610.two-sum-difference-equal-to-target.py)
+
+[15. 3Sum](src/15.3-sum.py)
+
+[16. 3Sum Closest](src/16.3-sum-closest.py)
+
+[611. Valid Triangle Number](src/611.valid-triangle-number.py)
+
+[18. 4Sum](src/18.4-sum.py)
+
 ```
-125. Valid Panlindrome
-680. Valid Panlindrome II
+Partition Array
+905. Sort Array By Parity
+75. Sort Colors
 ```
 
-Todo: Quick Select Template
+### 7.2 Array Question Summary
+
+1. Two Arrays
+   - merge sorted array (iterate backwards)
+   - intersection of two arrays (hash set, binary search, merge sorted array)
+   - Median of Two Sorted Arrays (binary search)
+  
+2. Two Pointers
+   - Same direction
+     - Remove elements
+       - move zeros (one for zero, one for iterating over array)
+       - remove element (one for elemement to be removed, one for iterating)
+       - remove duplicates from sorted array ()
+     - Two Diff
+
+   - Opposite directions
+     - Quick Select: (Todo: quick select template)
+       - kth largest element in an array
+     - Valid Palindrome I, II
+     - Two Sum, Three Sum (sort first) (Todo: kSum template)
+  
+3. Subarray (Prefix Sum)
+   - maximum subarray
+   - continuous subarray sum: prefix mod
+   - subarray sum equals k: prefix map
+
