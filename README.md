@@ -581,11 +581,11 @@ Valid Palindrome III $
 
 [18. 4Sum](src/18.4-sum.py)
 
-```
-Partition Array
-905. Sort Array By Parity
-75. Sort Colors
-```
+[31. Partition Array](src/L31.partition-array.py)
+
+[905. Sort Array By Parity](src/905.sort-array-by-parity.py)
+
+[75. Sort Colors](src/75.sort-colors.py)
 
 ### 7.2 Array Question Summary
 
@@ -605,8 +605,12 @@ Partition Array
    - Opposite directions
      - Quick Select: (Todo: quick select template)
        - kth largest element in an array
+       - partition array
+       - sort array by parity
+       - sort colors (three pointers)
      - Valid Palindrome I, II
-     - Two Sum, Three Sum (sort first) (Todo: kSum template)
+     - Two Sum, Three Sum (sort first) 
+     - [General kSum](src/905.sort-array-by-parity.py)
   
 3. Subarray (Prefix Sum)
    - maximum subarray
