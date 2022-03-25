@@ -610,7 +610,7 @@ Valid Palindrome III $
        - sort colors (three pointers)
      - Valid Palindrome I, II
      - Two Sum, Three Sum (sort first) 
-     - [General kSum](src/905.sort-array-by-parity.py)
+     - [General kSum](src/18.4-sum.py)
   
 3. Subarray (Prefix Sum)
    - maximum subarray
