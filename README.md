@@ -22,6 +22,8 @@
   - [7. Array](#7-array)
     - [7.1 Selected Questions](#71-selected-questions)
     - [7.2 Array Question Summary](#72-array-question-summary)
+  - [8. Hash & Heap](#8-hash--heap)
+    - [8.1 Selected Questions](#81-selected-questions)
 
 ---
 
@@ -617,3 +619,24 @@ Valid Palindrome III $
    - continuous subarray sum: prefix mod
    - subarray sum equals k: prefix map
 
+<br/>
+
+## 8. Hash & Heap
+
+### 8.1 Selected Questions
+
+[146. LRU Cache](src/146.lru-cache.py)
+[128. Longest Consecutive Sequence](src/128.longest-consecutive-sequence.py)
+[242. Valid Anagram](src/242.valid-anagram.py)
+[49. Group Anagrams](src/49.group-anagrams.py)
+ 
+```
+264. Ugly Number II
+545. Top k Largest Numbers II
+23. Merge k Sorted Lists
+1086. High Five
+973. K Closest Points to Origin
+692. Top K Frequent Words
+295. Find Median from Data Stream
+378. Kth Smallest Element in a Sorted Matrix
+```
