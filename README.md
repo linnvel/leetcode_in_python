@@ -24,6 +24,7 @@
     - [7.2 Array Question Summary](#72-array-question-summary)
   - [8. Hash & Heap](#8-hash--heap)
     - [8.1 Selected Questions](#81-selected-questions)
+    - [8.2 Python Implementation of Heap/Priority Queue](#82-python-implementation-of-heappriority-queue)
 
 ---
 
@@ -55,7 +56,7 @@
 
 [93. Restore IP Address](src/93.restore-ip-addresses.py)
 
-698 Partition to K Equal Sum Subsets ***
+[698. Partition to K Equal Sum Subsets](src/698.partition-to-k-equal-sum-subsets.py)
 
 [22. Generate Parentheses](src/22.generate-parentheses.py)
 
@@ -626,17 +627,97 @@ Valid Palindrome III $
 ### 8.1 Selected Questions
 
 [146. LRU Cache](src/146.lru-cache.py)
+
 [128. Longest Consecutive Sequence](src/128.longest-consecutive-sequence.py)
+
 [242. Valid Anagram](src/242.valid-anagram.py)
+
 [49. Group Anagrams](src/49.group-anagrams.py)
- 
+
+[264. Ugly Number II](src/264.ugly-number-ii.py)
+
+545 Top k Largest Numbers II $
+
+[23. Merge k Sorted Lists](src/23.merge-k-sorted-lists.py)
+
 ```
-264. Ugly Number II
-545. Top k Largest Numbers II
-23. Merge k Sorted Lists
-1086. High Five
-973. K Closest Points to Origin
-692. Top K Frequent Words
-295. Find Median from Data Stream
-378. Kth Smallest Element in a Sorted Matrix
+Time complexity analysis:
+  
+  k: # of lists
+  n: average length of each list
+  N: total # of nodes, O(N) = O(nk)
+  
+  Solution 1: Top down merge (divide and conquer)
+      divide (n nodes/list): [k lists]         -> 2 * [k/2 lists]       -> 4* [k/4 lists]       ...
+      conquer (2 lists):     [nk/2 nodes/list] -> 2 * [nk/4 nodes/list] -> 4* [nk/8 nodes/list] ...
+                              O(N)             ->      O(N/2)           ->     O(N/4)
+
+      T(k) = 2 * T(k/2) + O(N)
+            = 2 * (2 * T(k/4) + O(N/2)) + O(N)
+            = 4 * T(k/4) + 2 * O(N)
+            = 4 * (2 * T(k/8) + O(N/4)) + 2 * O(N)
+            = 8 * T(k/8) + 3 * O(N)
+            ...
+            = k * O(1) + logk * O(N)
+            = O(Nlogk)
+
+  Solution 2: Bottom up merge (iterative)
+      k lists          -> k/2 lists          -> k/4 lists  ...
+      n nodes per list -> 2n nodes per list  -> 4n nodes per list  ...
+
+      T(k) = k/2 * O(2n) + k/4 * O(2*2n) + k/8 * O(2*4n) + ... + 1 * O(N)
+            = O(knlogk)
+            = O(Nlogk)
+
+  Solution 3: Priority queue
+      Time: O(Nlogk)
+      Space: O(N)
 ```
+
+1086 High Five $
+
+[973. K Closest Points to Origin](src/973.k-closest-points-to-origin.py)
+
+[692. Top K Frequent Words](src/692.top-k-frequent-words.py)
+
+[295. Find Median from Data Stream]
+
+[378. Kth Smallest Element in a Sorted Matrix]
+
+
+### 8.2 Python Implementation of Heap/Priority Queue
+
+1. heapq (faster, recommended)
+
+```python
+import heapq
+q = []
+hq = heapq.heapify(q)
+q.heappush((key, value))  # push
+key, value = q.heappop()  # pop
+heapq.nlargest(n)
+heapq.nsmallest(n)
+```
+
+Note:
+- Min heap by default. Use `-value` to implement max heap.
+- First compare `key`, if `key` is same, compare `value` (make sure `value` is comparable if keys are not unique).
+- `heapq` is much faster than `Priority Queue`.
+- Ref: https://docs.python.org/3/library/heapq.html
+
+2. Priority Queue
+
+```python
+from queue import PriorityQueue
+pq = PriorityQueue()
+pq.put((key, value))   # push
+key, value = pq.get()  # pup
+pq.queue               # convert to list
+pq.qsize()             # get queue size
+pq.empty()
+```
+
+Notes:
+- The lowest valued entries are retrieved first.
+- Ref: https://docs.python.org/3/library/queue.html
+
