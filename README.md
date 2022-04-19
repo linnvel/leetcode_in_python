@@ -684,7 +684,7 @@ Valid Palindrome III $
 
 > Key: `O(logn)` time add solution.  
 
-[378. Kth Smallest Element in a Sorted Matrix]
+[378. Kth Smallest Element in a Sorted Matrix](src/378.kth-smallest-element-in-a-sorted-matrix.py)
 
 <br/>
 
