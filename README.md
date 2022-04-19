@@ -640,9 +640,9 @@ Valid Palindrome III $
 
 [23. Merge k Sorted Lists](src/23.merge-k-sorted-lists.py)
 
-```
-Time complexity analysis:
-  
+> **Time complexity analysis:**
+
+<pre>  
   k: # of lists
   n: average length of each list
   N: total # of nodes, O(N) = O(nk)
@@ -672,7 +672,7 @@ Time complexity analysis:
   Solution 3: Priority queue
       Time: O(Nlogk)
       Space: O(N)
-```
+</pre>
 
 1086 High Five $
 
@@ -680,10 +680,13 @@ Time complexity analysis:
 
 [692. Top K Frequent Words](src/692.top-k-frequent-words.py)
 
-[295. Find Median from Data Stream]
+[295. Find Median from Data Stream *](src/295.find-median-from-data-stream.py)
+
+> Key: `O(logn)` time add solution.  
 
 [378. Kth Smallest Element in a Sorted Matrix]
 
+<br/>
 
 ### 8.2 Python Implementation of Heap/Priority Queue
 
@@ -692,17 +695,18 @@ Time complexity analysis:
 ```python
 import heapq
 q = []
-hq = heapq.heapify(q)
+hq = heapq.heapify(q)  # not necessary if q is empty
 q.heappush((key, value))  # push
 key, value = q.heappop()  # pop
-heapq.nlargest(n)
-heapq.nsmallest(n)
+print(q[0])  # get top element (without popping)
+heapq.nlargest(n, q)
+heapq.nsmallest(n, q)
 ```
 
 Note:
 - Min heap by default. Use `-value` to implement max heap.
 - First compare `key`, if `key` is same, compare `value` (make sure `value` is comparable if keys are not unique).
-- `heapq` is much faster than `Priority Queue`.
+- **Always use `heapq` because it's much faster than `Priority Queue`**
 - Ref: https://docs.python.org/3/library/heapq.html
 
 2. Priority Queue
@@ -711,7 +715,7 @@ Note:
 from queue import PriorityQueue
 pq = PriorityQueue()
 pq.put((key, value))   # push
-key, value = pq.get()  # pup
+key, value = pq.get()  # pop
 pq.queue               # convert to list
 pq.qsize()             # get queue size
 pq.empty()
