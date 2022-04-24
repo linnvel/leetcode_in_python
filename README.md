@@ -25,6 +25,10 @@
   - [8. Hash & Heap](#8-hash--heap)
     - [8.1 Selected Questions](#81-selected-questions)
     - [8.2 Python Implementation of Heap/Priority Queue](#82-python-implementation-of-heappriority-queue)
+  - [9. Dynamic Programming](#9-dynamic-programming)
+    - [9.1 Fundamental Questions](#91-fundamental-questions)
+    - [9.2 DP Question Summary](#92-dp-question-summary)
+    - [9.3 Problem Solving Steps](#93-problem-solving-steps)
 
 ---
 
@@ -725,3 +729,107 @@ Notes:
 - The lowest valued entries are retrieved first.
 - Ref: https://docs.python.org/3/library/queue.html
 
+<br/>
+
+## 9. Dynamic Programming
+
+### 9.1 Fundamental Questions
+
+[509. Fibonacci Number](src/509.fibonacci-number.py)
+
+```
+931. Minimum Falling Path Sum
+1289. Minimum Falling Path Sum II
+746. Min Cost Climbing Stairs
+198. House Robber
+256. Paint House
+1137. N-th Tribonacci Number
+```
+
+### 9.2 DP Question Summary
+
+1. 坐标型: 在第i个节点会怎么样
+   
+状态: f(x)表示从起点走到坐标x, f[x][y]表示我从起点走到坐标x,y; 方程: 研究走到x, y这个点之前的一步; 初始化: 起点; 答案: 终点
+例题：飞行棋I
+```
+120. Triangle
+64. Minimum Path Sum
+62. Unique Paths
+63. Unique Paths II
+70. Climbing Stairs
+55. Jump Game
+45. Jump Game II
+```
+接龙型：
+```
+300. Longest Increasing Subsequence
+354
+368. Largest Divisible Subset
+403
+```
+
+单序列
+状态: f[i]表示前i个位置/数字/字符, 第i个; 方程: f[i] = f(f[j]), j是i之前的一个位置; 初始化: f[0]; 答案: f[n-1]; 小技巧: 一般有N个数字/字符, 就开N+1个位置的数组, 第0个位置单独留出来作初始化.(跟坐标相关的动态规划除外)
+Longest Increasing Subsequence
+House Robber
+Jump Game
+Jump Game II
+Word Break
+Palindrome Partitioning II
+
+双序列
+状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; 方程: f[i][j] = 研究第i个和第j个的匹配关系; 初始化: f[i][0]和f[0][i]; 答案: f[n][m], 其中n = s1.length(); m = s2.length();
+Longest Common Subsequence
+Edit Distance
+Distinct Subsequence
+Interleaving String
+
+2. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型
+   匹配型: dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值。例题：LCS, Edit Distance, wild card match? 最小窗口子序列。 匹配型DP大部分都能用滚动数组优化空间。
+   划分型: 例题: word break
+
+3. 区间型:
+   特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
+    例题: Stone game, 最长回文子串
+    Burst Balloons
+    Scramble String
+
+4. 背包型：其实属于前缀型一种
+   特点: 1). 用值作为DP维度, 2). DP过程就是填写矩阵, 3). 可以滚动数组优化
+   状态: f[i][S]前i个物品, 取出一些能否组成和为S; 方程: f[i][S] = f[i-1][S-a[i]] or f[i-1][S]; 初始化: f[i][0]=true; f[0][1...target]=false; 答案: 检查所有f[n][j]
+    例题: Backpack系列，点菜问题，考试策略，card game II (LIntCode 1538), cutting a rod (LintCode 700)
+    背包型DP大部分都能用滚动数组优化空间。
+    Backpack
+    Backpack II
+    Minimum Adjustment Cost
+    K sum
+
+5. 博弈型
+   状态: 定义一个人的状态; 方程: 考虑两个人的状态做状态更新; 初始化: 暂无; 答案: 先思考最小状态, 再思考大的状态 -> 往小的递推, 适合记忆话搜索
+动态规划, 循环(从小到大递推), 记忆化搜索(从大到小搜索, 画搜索树); 什么时候 用记忆化搜索: 1). 状态转移特别麻烦, 不是顺序性, 2). 初始化状态不是很容易找到; 题目类型: 1). 博弈类问题, 2). 区间类问题; 适合解决题目: 1). 状态特别复杂, 2). 不好初始化
+    例题: coins in a line系列(中间有一道是区间型)
+    Coins in a Line
+    Coins in a Line II
+    Coins in a Line III
+
+6. 状态压缩型
+    例题: TSP
+
+7. 树型
+    例题: 树上的DP, Binary Tree Maximum Path Sum
+
+8. 图型
+    例题: 图上的DP (面试基本不考)
+
+### 9.3 Problem Solving Steps
+
+1. State definition: index and dp value
+2. State transition function
+3. State initialization
+4. Iteration order: top down/bottom up/...
+5. Return answer
+
+Extra credit:derive dp manually
+
+Debug: print dp
