@@ -258,6 +258,8 @@ height: O(logn), each level: O(n) ==> total time: O(nlogn)
    ...     ...
                       O(n)
 ```
+Ref: [通过一道面试题目，讲一讲递归算法的时间复杂度！](
+https://mp.weixin.qq.com/s/I6ZXFbw09NR31F5CJR_geQ)
 
 ## 3. Binary Search
 
@@ -736,6 +738,8 @@ Notes:
 ### 9.1 Fundamental Questions
 
 [509. Fibonacci Number](src/509.fibonacci-number.py)
+
+[70. Climbing Stairs](src/70.climbing-stairs.py)
 
 ```
 931. Minimum Falling Path Sum
