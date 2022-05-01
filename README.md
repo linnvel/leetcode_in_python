@@ -741,13 +741,23 @@ Notes:
 
 [70. Climbing Stairs](src/70.climbing-stairs.py)
 
+[1137. N-th Tribonacci Number](src/1137.n-th-tribonacci-number.py)
+
+[746. Min Cost Climbing Stairs](src/746.min-cost-climbing-stairs.py)
+
+[62. Unique Paths](src/62.unique-paths.py)
+
+[63. Unique Paths II](src/63.unique-paths-ii.py)
+
+[343. Integer Break](src/343.integer-break.py)
+
+[96. Unique Binary Search Trees](src/96.unique-binary-search-trees.py)
+
 ```
 931. Minimum Falling Path Sum
 1289. Minimum Falling Path Sum II
-746. Min Cost Climbing Stairs
 198. House Robber
 256. Paint House
-1137. N-th Tribonacci Number
 ```
 
 ### 9.2 DP Question Summary
