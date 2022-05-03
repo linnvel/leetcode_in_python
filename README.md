@@ -803,13 +803,25 @@ Interleaving String
    匹配型: dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值。例题：LCS, Edit Distance, wild card match? 最小窗口子序列。 匹配型DP大部分都能用滚动数组优化空间。
    划分型: 例题: word break
 
-3. 区间型:
-   特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
-    例题: Stone game, 最长回文子串
-    Burst Balloons
-    Scramble String
+3. 背包型：其实属于前缀型一种
+   
+   ![image](img/knapsack.jpg)
 
-4. 背包型：其实属于前缀型一种
+   - 0-1 Knapsack Problem
+  
+     [Knapsack Problem](src/Knapsack.py)
+  
+     [416. Partition Equal Subset Sum]
+
+     [1049. Last Stone Weight II]
+     
+     [494. Target Sum]
+     
+     [474. Ones and Zeros]
+
+    - 完全背包
+      
+    - 多重背包
    特点: 1). 用值作为DP维度, 2). DP过程就是填写矩阵, 3). 可以滚动数组优化
    状态: f[i][S]前i个物品, 取出一些能否组成和为S; 方程: f[i][S] = f[i-1][S-a[i]] or f[i-1][S]; 初始化: f[i][0]=true; f[0][1...target]=false; 答案: 检查所有f[n][j]
     例题: Backpack系列，点菜问题，考试策略，card game II (LIntCode 1538), cutting a rod (LintCode 700)
@@ -818,6 +830,12 @@ Interleaving String
     Backpack II
     Minimum Adjustment Cost
     K sum
+
+4. 区间型:
+   特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
+    例题: Stone game, 最长回文子串
+    Burst Balloons
+    Scramble String
 
 5. 博弈型
    状态: 定义一个人的状态; 方程: 考虑两个人的状态做状态更新; 初始化: 暂无; 答案: 先思考最小状态, 再思考大的状态 -> 往小的递推, 适合记忆话搜索
