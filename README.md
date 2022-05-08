@@ -811,7 +811,7 @@ Interleaving String
   
      [Knapsack Problem](src/Knapsack.py)
   
-     [416. Partition Equal Subset Sum]
+     [416. Partition Equal Subset Sum *](src/416.partition-equal-subset-sum.py)
 
      [1049. Last Stone Weight II]
      
@@ -859,7 +859,7 @@ Interleaving String
 1. State definition: index and dp value
 2. State transition function
 3. State initialization
-4. Iteration order: top down/bottom up/...
+4. **Iteration order**: top down/bottom up/...
 5. Return answer
 
 Extra credit:derive dp manually
