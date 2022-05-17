@@ -813,7 +813,7 @@ Interleaving String
   
      [416. Partition Equal Subset Sum *](src/416.partition-equal-subset-sum.py)
 
-     [1049. Last Stone Weight II]
+     [1049. Last Stone Weight II](src/1049.last-stone-weight-ii.py)
      
      [494. Target Sum]
      
