@@ -815,7 +815,7 @@ Interleaving String
 
      [1049. Last Stone Weight II](src/1049.last-stone-weight-ii.py)
      
-     [494. Target Sum]
+     [494. Target Sum](src/494.target-sum.py)
      
      [474. Ones and Zeros]
 
