@@ -818,7 +818,7 @@ Interleaving String
      
      [494. Target Sum](src/494.target-sum.py)
      
-     [474. Ones and Zeros]
+     [474. Ones and Zeros](src/474.ones-and-zeroes.py)
 
     - 完全背包
       
