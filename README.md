@@ -28,7 +28,8 @@
   - [9. Dynamic Programming](#9-dynamic-programming)
     - [9.1 Fundamental Questions](#91-fundamental-questions)
     - [9.2 DP Question Summary](#92-dp-question-summary)
-    - [9.3 Problem Solving Steps](#93-problem-solving-steps)
+    - [9.3 DP Problem Solving Steps](#93-dp-problem-solving-steps)
+    - [9.4 DFS with memorization](#94-dfs-with-memorization)
 
 ---
 
@@ -854,7 +855,7 @@ Interleaving String
 8. 图型
     例题: 图上的DP (面试基本不考)
 
-### 9.3 Problem Solving Steps
+### 9.3 DP Problem Solving Steps
 
 1. State definition: index and dp value
 2. State transition function
@@ -865,3 +866,14 @@ Interleaving String
 Extra credit:derive dp manually
 
 Debug: print dp
+
+### 9.4 DFS with memorization
+
+1. Brute force DFS
+   - Time complexity: `O(2^N)`, `N` = length of input
+2. Memorization
+   - `Cache = [{Key: Value}]`
+   - `Key`: dfs function parameter used to identify each recursive call
+   - `Value`: dfs return value
+   - Prefer as many duplicate keys as possible
+   - Time complexity: `O(N^2)` ??? (todo)
