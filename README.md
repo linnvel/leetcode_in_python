@@ -808,9 +808,9 @@ Interleaving String
    
    ![image](img/knapsack.jpg)
 
-   - 0-1 Knapsack Problem
+   - 0-1 Knapsack
   
-     [Knapsack Problem](src/Knapsack.py)
+     [0-1 Knapsack Problem](src/Knapsack1.py)
   
      [416. Partition Equal Subset Sum *](src/416.partition-equal-subset-sum.py)
 
@@ -820,7 +820,21 @@ Interleaving String
      
      [474. Ones and Zeros](src/474.ones-and-zeroes.py)
 
-    - 完全背包
+    - Unbounded Knapsack
+      
+      [Unbounded Knapsack](src/Knapsack2.py)
+
+      [518.Coin Change 2](src/518.coin-change-2.py)
+
+      [377]
+
+      [70]
+
+      [322]
+
+      [279]
+
+      [139]
       
     - 多重背包
    特点: 1). 用值作为DP维度, 2). DP过程就是填写矩阵, 3). 可以滚动数组优化
@@ -861,6 +875,17 @@ Interleaving String
 2. State transition function
 3. State initialization
 4. **Iteration order**: top down/bottom up/...
+
+   knapsack problem: iterate over item first or weight first?
+   <pre>
+   0-1 knapsack:
+      2d dp: either is ok
+      1d dp: iterate over weight first
+   Unbounded knapsack: 
+      Return max value: either is ok
+      Return # of combination: iterate over weight first
+      Return # of permutation: iterate over item first
+   </pre>
 5. Return answer
 
 Extra credit:derive dp manually

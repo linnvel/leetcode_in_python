@@ -30,6 +30,7 @@ class Solution:
             for j in range(m, cnt0 - 1, -1):
                 for k in range(n, cnt1 - 1, -1):
                     dp[j][k] = max(dp[j][k], dp[j - cnt0][k - cnt1] + 1)
+            print(dp)
         return dp[m][n]
         
 # @lc code=end
