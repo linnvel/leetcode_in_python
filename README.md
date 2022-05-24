@@ -28,6 +28,8 @@
   - [9. Dynamic Programming](#9-dynamic-programming)
     - [9.1 Fundamental Questions](#91-fundamental-questions)
     - [9.2 DP Question Summary](#92-dp-question-summary)
+      - [1. Knapsack Problems](#1-knapsack-problems)
+      - [2. 坐标型: 在第i个节点会怎么样](#2-坐标型-在第i个节点会怎么样)
     - [9.3 DP Problem Solving Steps](#93-dp-problem-solving-steps)
     - [9.4 DFS with memorization](#94-dfs-with-memorization)
 
@@ -101,13 +103,13 @@ Notes:
     
     - `startIndex := i + 1`
         - `cur` has all or part of elements in `input`. Each element appears **at most once**.
-        - Subsets I/II, Palindrome Partitioning, Restore IP Address
+        - Subsets I/II, Palindrome Partitioning, Restore IP Address, Combination Sum II/III
     - `startIndex := i`
         - `cur` has all or part of elements in `input`. Each element could appear **multiple times**.  
         - Combination Sum
     - `seen`
         - `cur` has all elements in `input` **once**.
-        - Permutation I/II, Combination Sum II
+        - Permutation I/II
 
     - Don't need `startIndex`, i.e., `startIndex` always equals to 0.
         - Letter Combination of a Phone Number
@@ -762,54 +764,22 @@ Notes:
 ```
 
 ### 9.2 DP Question Summary
+<br>
 
-1. 坐标型: 在第i个节点会怎么样
-   
-状态: f(x)表示从起点走到坐标x, f[x][y]表示我从起点走到坐标x,y; 方程: 研究走到x, y这个点之前的一步; 初始化: 起点; 答案: 终点
-例题：飞行棋I
-```
-120. Triangle
-64. Minimum Path Sum
-62. Unique Paths
-63. Unique Paths II
-70. Climbing Stairs
-55. Jump Game
-45. Jump Game II
-```
-接龙型：
-```
-300. Longest Increasing Subsequence
-354
-368. Largest Divisible Subset
-403
-```
+#### 1. Knapsack Problems
 
-单序列
-状态: f[i]表示前i个位置/数字/字符, 第i个; 方程: f[i] = f(f[j]), j是i之前的一个位置; 初始化: f[0]; 答案: f[n-1]; 小技巧: 一般有N个数字/字符, 就开N+1个位置的数组, 第0个位置单独留出来作初始化.(跟坐标相关的动态规划除外)
-Longest Increasing Subsequence
-House Robber
-Jump Game
-Jump Game II
-Word Break
-Palindrome Partitioning II
+Given a set of $n$ items, with each item ${\displaystyle 1\leq j\leq n}$ having an associated profit $p_j$, weight $w_j$. The decision variable $x_j$ is used to select the item. The objective is to pick some of the items, with maximal total profit, while obeying that the maximum total weight of the chosen items must not exceed $W$.
 
-双序列
-状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; 方程: f[i][j] = 研究第i个和第j个的匹配关系; 初始化: f[i][0]和f[0][i]; 答案: f[n][m], 其中n = s1.length(); m = s2.length();
-Longest Common Subsequence
-Edit Distance
-Distinct Subsequence
-Interleaving String
+maximize ${\displaystyle \sum _{j=1}^{n}p_{j}x_{j}}$
 
-2. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型
-   匹配型: dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值。例题：LCS, Edit Distance, wild card match? 最小窗口子序列。 匹配型DP大部分都能用滚动数组优化空间。
-   划分型: 例题: word break
+subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 
-3. 背包型：其实属于前缀型一种
-   
    ![image](img/knapsack.jpg)
 
    - 0-1 Knapsack
   
+     ${\displaystyle x_{j}\in \{0,1\}},	{\displaystyle \forall j\in \{1,\ldots ,n\}}$
+
      [0-1 Knapsack Problem](src/Knapsack1.py)
   
      [416. Partition Equal Subset Sum *](src/416.partition-equal-subset-sum.py)
@@ -820,31 +790,105 @@ Interleaving String
      
      [474. Ones and Zeros](src/474.ones-and-zeroes.py)
 
-    - Unbounded Knapsack
+   - Unbounded Knapsack (完全背包)
+     
+     ${\displaystyle x_{j}\geq 0}, x_{j}$ integral for all j
+
+     [Unbounded Knapsack](src/Knapsack2.py)
+
+     [518.Coin Change 2](src/518.coin-change-2.py)
+
+     [377. Combination Sum IV](src/377.combination-sum-iv.py)
+
+     [70. Climb Stairs](src/70.climbing-stairs.py)
+
+     [322. Coin Change](src/322.coin-change.py)
+
+     [279. Perfect Squares](src/279.perfect-squares.py)
+
+     [139. Word Break *](src/139.word-break.py)
+  
+   - Unbounded Knapsack (完全背包)
+     
+     ${\displaystyle 0\leq x_{j}\leq u_{j},x_{j}}$ integral for all j
       
-      [Unbounded Knapsack](src/Knapsack2.py)
+     [Bounded Knapsack](src/knapsack3.py)
 
-      [518.Coin Change 2](src/518.coin-change-2.py)
-
-      [377]
-
-      [70]
-
-      [322]
-
-      [279]
-
-      [139]
-      
-    - 多重背包
-   特点: 1). 用值作为DP维度, 2). DP过程就是填写矩阵, 3). 可以滚动数组优化
    状态: f[i][S]前i个物品, 取出一些能否组成和为S; 方程: f[i][S] = f[i-1][S-a[i]] or f[i-1][S]; 初始化: f[i][0]=true; f[0][1...target]=false; 答案: 检查所有f[n][j]
-    例题: Backpack系列，点菜问题，考试策略，card game II (LIntCode 1538), cutting a rod (LintCode 700)
+    
+    例题: card game II (LIntCode 1538), cutting a rod (LintCode 700)
     背包型DP大部分都能用滚动数组优化空间。
-    Backpack
-    Backpack II
     Minimum Adjustment Cost
     K sum
+
+#### 2. 坐标型: 在第i个节点会怎么样
+   
+状态: f(x)表示从起点走到坐标x, f[x][y]表示我从起点走到坐标x,y; 方程: 研究走到x, y这个点之前的一步; 初始化: 起点; 答案: 终点
+
+[120. Triangle](src/120.triangle.py)
+
+[64. Minimum Path Sum](src/64.minimum-path-sum.py)
+
+[62. Unique Paths](src/62.unique-paths.py)
+
+[63. Unique Paths II](src/63.unique-paths-ii.py)
+
+[70. Climbing Stairs](src/70.climbing-stairs.py)
+
+[55. Jump Game](src/55.jump-game.py)
+
+[45. Jump Game II]
+
+
+接龙型：
+```
+300. Longest Increasing Subsequence
+354
+368. Largest Divisible Subset
+403
+```
+
+单序列
+状态: f[i]表示前i个位置/数字/字符, 第i个; 方程: f[i] = f(f[j]), j是i之前的一个位置; 初始化: f[0]; 答案: f[n-1]; 小技巧: 一般有N个数字/字符, 就开N+1个位置的数组, 第0个位置单独留出来作初始化.(跟坐标相关的动态规划除外)
+
+Longest Increasing Subsequence
+
+House Robber
+
+Jump Game
+
+Jump Game II
+
+Word Break
+
+Palindrome Partitioning II
+
+双序列
+状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; 方程: f[i][j] = 研究第i个和第j个的匹配关系; 初始化: f[i][0]和f[0][i]; 答案: f[n][m], 其中n = s1.length(); m = s2.length();
+Longest Common Subsequence
+
+Edit Distance
+
+Distinct Subsequence
+
+Interleaving String
+
+2. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型
+   匹配型: dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值。例题：
+   
+   LCS, 
+   
+   Edit Distance, 
+   
+   wild card match?
+   
+   最小窗口子序列。 
+   
+   匹配型DP大部分都能用滚动数组优化空间。
+   
+   划分型: 例题: word break
+
+   背包型属于前缀型的一种
 
 4. 区间型:
    特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
@@ -882,9 +926,10 @@ Interleaving String
       2d dp: either is ok
       1d dp: iterate over weight first
    Unbounded knapsack: 
-      Return max value: either is ok
-      Return # of combination: iterate over weight first
-      Return # of permutation: iterate over item first
+      Return max value: either is ok (original knapsack problem)
+      return min # of solution size: either is ok (e.g. coin change)
+      Return # of combination: iterate over weight first (e.g. coin change II)
+      Return # of permutation: iterate over item first (e.g. combination sum IV)
    </pre>
 5. Return answer
 

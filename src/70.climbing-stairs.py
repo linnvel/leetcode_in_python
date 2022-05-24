@@ -65,8 +65,12 @@ class Solution:
             dp[0] = dp[1]
             dp[1] = sum
         return dp[1]
-
-
+    
+    # Follow up: 1, 2, ... or m steps for each climb => how many distinct ways to the top?
+    # <=> Combination Sum IV
+    # Solution: Unbounded knapsack
+    # dp[0] = 1, dp[1...n] = 0
+    # dp[j] += dp[j - i] for i in range(1, m + 1) for j in range(n + 1)
 
 # @lc code=end
 
