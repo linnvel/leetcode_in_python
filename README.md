@@ -837,13 +837,15 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 
 [55. Jump Game](src/55.jump-game.py)
 
-[45. Jump Game II]
+[45. Jump Game II *](src/45.jump-game-ii.py)
 
+- 接龙型：
 
-接龙型：
+[300. Longest Increasing Subsequence](src/300.longest-increasing-subsequence.py)
+
+[354. Russian Doll Envelopes]
+
 ```
-300. Longest Increasing Subsequence
-354
 368. Largest Divisible Subset
 403
 ```
