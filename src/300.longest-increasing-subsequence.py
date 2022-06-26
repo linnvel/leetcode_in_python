@@ -45,13 +45,33 @@ class Solution:
 
         # Another idea of DP
         # dp[i] = max LIS ended by nums[i]
-        dp = [1 for _ in range(len(nums))]
-        for i in range(len(nums)):
-            for j in range(i):  # optimization: binary search
-                if nums[j] < nums[i]:
-                    dp[i] = max(dp[j] + 1, dp[i]) 
-            print(dp)
-        return max(dp)
+        # dp = [1 for _ in range(len(nums))]
+        # for i in range(len(nums)):
+        #     for j in range(i):  # optimization: binary search
+        #         if nums[j] < nums[i]:
+        #             dp[i] = max(dp[j] + 1, dp[i]) 
+        #     print(i, dp)
+        # return max(dp)
+
+        # Solution 4: DP + Greedy + Binary Search
+        # dp[i] = smallest ending number for LIS with length of i
+        # dp[j + 1] = nums[i], j = argmax(dp[j] < nums[i])
+        dp = [-float('inf')] 
+        for num in nums:
+            # binary search: find last j so that dp[j] < num
+            l, r = 0, len(dp) - 1
+            while l < r - 1:
+                mid = (l + r) // 2
+                if dp[mid] < num:
+                    l = mid
+                else:
+                    r = mid
+            index = r if dp[r] < num else l
+            if index <= len(dp) - 2:
+                dp[index + 1] = num
+            else:
+                dp.append(num)
+        return len(dp) - 1
 
 # @lc code=end
 

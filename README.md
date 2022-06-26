@@ -30,6 +30,12 @@
     - [9.2 DP Question Summary](#92-dp-question-summary)
       - [1. Knapsack Problems](#1-knapsack-problems)
       - [2. 坐标型: 在第i个节点会怎么样](#2-坐标型-在第i个节点会怎么样)
+      - [3. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型](#3-前缀型-前i个节点怎么怎么样-分为匹配型和划分型)
+      - [4. 区间型](#4-区间型)
+      - [5. 博弈型](#5-博弈型)
+      - [6. 状态压缩型](#6-状态压缩型)
+      - [7. 树型](#7-树型)
+      - [8. 图型](#8-图型)
     - [9.3 DP Problem Solving Steps](#93-dp-problem-solving-steps)
     - [9.4 DFS with memorization](#94-dfs-with-memorization)
 
@@ -759,7 +765,6 @@ Notes:
 ```
 931. Minimum Falling Path Sum
 1289. Minimum Falling Path Sum II
-198. House Robber
 256. Paint House
 ```
 
@@ -822,97 +827,116 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
     K sum
 
 #### 2. 坐标型: 在第i个节点会怎么样
-   
-状态: f(x)表示从起点走到坐标x, f[x][y]表示我从起点走到坐标x,y; 方程: 研究走到x, y这个点之前的一步; 初始化: 起点; 答案: 终点
 
-[120. Triangle](src/120.triangle.py)
+- 单序列 
+  
+  > 状态: f[i]表示前i个位置/数字/字符, 第i个;<br>
+  > 方程: f[i] = f(f[j]), j是i之前的一个位置或多个位置; <br>
+  > 初始化: f[0]; <br>
+  > 答案: f[n-1]; <br>
+  > 小技巧: 一般有N个数字/字符, 就开N+1个位置的数组, 第0个位置单独留出来作初始化.(跟坐标相关的动态规划除外)
 
-[64. Minimum Path Sum](src/64.minimum-path-sum.py)
+  [120. Triangle](src/120.triangle.py)
 
-[62. Unique Paths](src/62.unique-paths.py)
+  [64. Minimum Path Sum](src/64.minimum-path-sum.py)
 
-[63. Unique Paths II](src/63.unique-paths-ii.py)
+  [62. Unique Paths](src/62.unique-paths.py)
 
-[70. Climbing Stairs](src/70.climbing-stairs.py)
+  [63. Unique Paths II](src/63.unique-paths-ii.py)
 
-[55. Jump Game](src/55.jump-game.py)
+  [70. Climbing Stairs](src/70.climbing-stairs.py)
 
-[45. Jump Game II *](src/45.jump-game-ii.py)
+  [55. Jump Game](src/55.jump-game.py)
+
+  [45. Jump Game II *](src/45.jump-game-ii.py)
+
+  [132. Palindrome Partitioning II *]
+
+  House Robber:
+
+  [198. House Robber](src/198.house-robber.py)
+
+  [213. House Robber II *](src/213.house-robber-ii.py)
+
+  [337. House Robber III]
 
 - 接龙型：
 
 [300. Longest Increasing Subsequence](src/300.longest-increasing-subsequence.py)
 
-[354. Russian Doll Envelopes]
+[354. Russian Doll Envelopes](src/354.russian-doll-envelopes.py)
 
-```
-368. Largest Divisible Subset
-403
-```
+[368. Largest Divisible Subset](src/368.largest-divisible-subset.py)
 
-单序列
-状态: f[i]表示前i个位置/数字/字符, 第i个; 方程: f[i] = f(f[j]), j是i之前的一个位置; 初始化: f[0]; 答案: f[n-1]; 小技巧: 一般有N个数字/字符, 就开N+1个位置的数组, 第0个位置单独留出来作初始化.(跟坐标相关的动态规划除外)
+[403. Frog Jump](src/403.frog-jump.py)
 
-Longest Increasing Subsequence
+- 双序列
 
-House Robber
+> 状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; 
+> 方程: f[i][j] = 研究第i个和第j个的匹配关系; 
+> 初始化: f[i][0]和f[0][i]; 答案: f[n][m], 其中n = s1.length(); m = s2.length();
 
-Jump Game
-
-Jump Game II
-
-Word Break
-
-Palindrome Partitioning II
-
-双序列
-状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; 方程: f[i][j] = 研究第i个和第j个的匹配关系; 初始化: f[i][0]和f[0][i]; 答案: f[n][m], 其中n = s1.length(); m = s2.length();
 Longest Common Subsequence
 
-Edit Distance
+[72. Edit Distance]
 
-Distinct Subsequence
+[115. Distinct Subsequence]
 
-Interleaving String
+[97. Interleaving String]
 
-2. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型
-   匹配型: dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值。例题：
+#### 3. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型
+- 匹配型
+  
+> dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值
+> 匹配型DP大部分都能用滚动数组优化空间。
    
-   LCS, 
+LCS, 
    
-   Edit Distance, 
+Edit Distance, 
    
-   wild card match?
+wild card match?
    
-   最小窗口子序列。 
+最小窗口子序列
    
-   匹配型DP大部分都能用滚动数组优化空间。
-   
-   划分型: 例题: word break
+- 划分型
+  
+word break
 
-   背包型属于前缀型的一种
+#### 4. 区间型
 
-4. 区间型:
-   特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
-    例题: Stone game, 最长回文子串
-    Burst Balloons
-    Scramble String
+> 特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 
+> 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
 
-5. 博弈型
-   状态: 定义一个人的状态; 方程: 考虑两个人的状态做状态更新; 初始化: 暂无; 答案: 先思考最小状态, 再思考大的状态 -> 往小的递推, 适合记忆话搜索
+Stone game
+
+最长回文子串
+
+Burst Balloons
+
+Scramble String
+
+#### 5. 博弈型
+
+> 状态: 定义一个人的状态; 
+> 方程: 考虑两个人的状态做状态更新; 
+> 初始化: 暂无; 
+> 答案: 先思考最小状态, 再思考大的状态 -> 往小的递推, 适合记忆话搜索
+
 动态规划, 循环(从小到大递推), 记忆化搜索(从大到小搜索, 画搜索树); 什么时候 用记忆化搜索: 1). 状态转移特别麻烦, 不是顺序性, 2). 初始化状态不是很容易找到; 题目类型: 1). 博弈类问题, 2). 区间类问题; 适合解决题目: 1). 状态特别复杂, 2). 不好初始化
     例题: coins in a line系列(中间有一道是区间型)
     Coins in a Line
     Coins in a Line II
     Coins in a Line III
 
-6. 状态压缩型
+#### 6. 状态压缩型
     例题: TSP
 
-7. 树型
+#### 7. 树型
     例题: 树上的DP, Binary Tree Maximum Path Sum
+    [337. House Robber III]
 
-8. 图型
+
+#### 8. 图型
     例题: 图上的DP (面试基本不考)
 
 ### 9.3 DP Problem Solving Steps
