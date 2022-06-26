@@ -773,7 +773,7 @@ Notes:
 
 #### 1. Knapsack Problems
 
-Given a set of $n$ items, with each item ${\displaystyle 1\leq j\leq n}$ having an associated profit $p_j$, weight $w_j$. The decision variable $x_j$ is used to select the item. The objective is to pick some of the items, with maximal total profit, while obeying that the maximum total weight of the chosen items must not exceed $W$.
+Given a set of $n$ items, with each item $${\displaystyle 1\leq j\leq n}$$ having an associated profit $p_j$, weight $w_j$. The decision variable $x_j$ is used to select the item. The objective is to pick some of the items, with maximal total profit, while obeying that the maximum total weight of the chosen items must not exceed $W$.
 
 maximize ${\displaystyle \sum _{j=1}^{n}p_{j}x_{j}}$
 
@@ -815,7 +815,7 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
   
    - Unbounded Knapsack (完全背包)
      
-     ${\displaystyle 0\leq x_{j}\leq u_{j},x_{j}}$ integral for all j
+     $${\displaystyle 0\leq x_{j}\leq u_{j},x_{j}}$$ integral for all j
       
      [Bounded Knapsack](src/knapsack3.py)
 
@@ -862,74 +862,78 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 
 - 接龙型：
 
-[300. Longest Increasing Subsequence](src/300.longest-increasing-subsequence.py)
+  [300. Longest Increasing Subsequence](src/300.longest-increasing-subsequence.py)
 
-[354. Russian Doll Envelopes](src/354.russian-doll-envelopes.py)
+  [354. Russian Doll Envelopes](src/354.russian-doll-envelopes.py)
 
-[368. Largest Divisible Subset](src/368.largest-divisible-subset.py)
+  [368. Largest Divisible Subset](src/368.largest-divisible-subset.py)
 
-[403. Frog Jump](src/403.frog-jump.py)
+  [403. Frog Jump](src/403.frog-jump.py)
 
 - 双序列
 
-> 状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; 
-> 方程: f[i][j] = 研究第i个和第j个的匹配关系; 
-> 初始化: f[i][0]和f[0][i]; 答案: f[n][m], 其中n = s1.length(); m = s2.length();
+  > 状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; 
+  > 方程: f[i][j] = 研究第i个和第j个的匹配关系; 
+  > 初始化: f[i][0]和f[0][i]; 答案: f[n][m], 其中n = s1.length(); m = s2.length();
 
-Longest Common Subsequence
+  Longest Common Subsequence
 
-[72. Edit Distance]
+  [72. Edit Distance]
 
-[115. Distinct Subsequence]
+  [115. Distinct Subsequence]
 
-[97. Interleaving String]
+  [97. Interleaving String]
 
 #### 3. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型
 - 匹配型
   
-> dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值
-> 匹配型DP大部分都能用滚动数组优化空间。
+  > dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值
+  > 匹配型DP大部分都能用滚动数组优化空间。
    
-LCS, 
+  Longest Continuous Increasing Subsequence
    
-Edit Distance, 
+  Edit Distance, 
    
-wild card match?
+  wild card match?
    
-最小窗口子序列
+  最小窗口子序列
    
 - 划分型
   
-word break
+  word break
 
 #### 4. 区间型
 
-> 特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 
-> 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
+  > 特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 
+  > 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
 
-Stone game
+  Stone game
 
-最长回文子串
+  Longest Palindromic Substring
 
-Burst Balloons
+  Burst Balloons
 
-Scramble String
+  Scramble String
 
 #### 5. 博弈型
 
-> 状态: 定义一个人的状态; 
-> 方程: 考虑两个人的状态做状态更新; 
-> 初始化: 暂无; 
-> 答案: 先思考最小状态, 再思考大的状态 -> 往小的递推, 适合记忆话搜索
+  > 状态: 定义一个人的状态; 
+  > 方程: 考虑两个人的状态做状态更新; 
+  > 初始化: 暂无; 
+  > 答案: 先思考最小状态, 再思考大的状态 -> 往小的递推, 适合记忆话搜索
 
-动态规划, 循环(从小到大递推), 记忆化搜索(从大到小搜索, 画搜索树); 什么时候 用记忆化搜索: 1). 状态转移特别麻烦, 不是顺序性, 2). 初始化状态不是很容易找到; 题目类型: 1). 博弈类问题, 2). 区间类问题; 适合解决题目: 1). 状态特别复杂, 2). 不好初始化
-    例题: coins in a line系列(中间有一道是区间型)
-    Coins in a Line
-    Coins in a Line II
-    Coins in a Line III
+  动态规划, 循环(从小到大递推), 记忆化搜索(从大到小搜索, 画搜索树); 什么时候 用记忆化搜索: 1). 状态转移特别麻烦, 不是顺序性, 2). 初始化状态不是很容易找到; 题目类型: 1). 博弈类问题, 2). 区间类问题; 适合解决题目: 1). 状态特别复杂, 2). 不好初始化
+  
+  coins in a line系列(中间有一道是区间型)
+  
+  Coins in a Line
+  
+  Coins in a Line II
+  
+  Coins in a Line III
 
 #### 6. 状态压缩型
-    例题: TSP
+  TSP
 
 #### 7. 树型
     例题: 树上的DP, Binary Tree Maximum Path Sum
