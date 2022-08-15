@@ -10,32 +10,37 @@ from collections import deque
 
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        # get indegree dict
-        indegree = {}
-        for course, _ in prerequisites:
-            if course in indegree:
-                indegree[course] += 1
-            else:
-                indegree[course] = 1
+        # get indegree and adjacent list
+        indegree = {i:0 for i in range(numCourses)}
+        adj_list = {i:[] for i in range(numCourses)}
+        for course, precourse in prerequisites:
+            indegree[course] += 1
+            adj_list[precourse].append(course)
         
-        # find start nodes
-        q = deque()
-        order = []
-        for course in range(numCourses):
-            if course not in indegree:
-                q.append(course)
-                order.append(course)
+        # find start nodes and push to queue
+        startNodes = [i for i in indegree if indegree[i] == 0]
+        queue = deque(startNodes)
 
-        while q:
-            pre = q.popleft()
-            for course, precourse in prerequisites:
-                if pre != precourse:
-                    continue
-                indegree[course] -= 1
-                if indegree[course] == 0:
-                    q.append(course)
-                    order.append(course)
+        # bfs
+        # results = []
+        # while queue:
+        #     node = queue.popleft()
+        #     if indegree[node] == 0:
+        #         for neighbor in adj_list[node]:
+        #             indegree[neighbor] -= 1
+        #             if neighbor not in queue:
+        #                 queue.appendleft(neighbor)
+        #         results.append(node)
 
-        return len(order) == numCourses
+        results = startNodes
+        while queue:
+            node = queue.pop()
+            for neighbor in adj_list[node]:
+                indegree[neighbor] -= 1
+                if indegree[neighbor] == 0:
+                    queue.append(neighbor)
+                    results.append(neighbor)
+        return len(results) == numCourses       
+            
 
 # @lc code=end

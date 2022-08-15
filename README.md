@@ -22,12 +22,14 @@
   - [7. Array](#7-array)
     - [7.1 Selected Questions](#71-selected-questions)
     - [7.2 Array Question Summary](#72-array-question-summary)
-  - [8. Hash & Heap](#8-hash--heap)
+  - [8. Sliding Window](#8-sliding-window)
     - [8.1 Selected Questions](#81-selected-questions)
-    - [8.2 Python Implementation of Heap/Priority Queue](#82-python-implementation-of-heappriority-queue)
-  - [9. Dynamic Programming](#9-dynamic-programming)
-    - [9.1 Fundamental Questions](#91-fundamental-questions)
-    - [9.2 DP Question Summary](#92-dp-question-summary)
+  - [9. Hash & Heap](#9-hash--heap)
+    - [9.1 Selected Questions](#91-selected-questions)
+    - [9.2 Python Implementation of Heap/Priority Queue](#92-python-implementation-of-heappriority-queue)
+  - [10. Dynamic Programming](#10-dynamic-programming)
+    - [10.1 Fundamental Questions](#101-fundamental-questions)
+    - [10.2 DP Question Summary](#102-dp-question-summary)
       - [1. Knapsack Problems](#1-knapsack-problems)
       - [2. 坐标型: 在第i个节点会怎么样](#2-坐标型-在第i个节点会怎么样)
       - [3. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型](#3-前缀型-前i个节点怎么怎么样-分为匹配型和划分型)
@@ -36,8 +38,8 @@
       - [6. 状态压缩型](#6-状态压缩型)
       - [7. 树型](#7-树型)
       - [8. 图型](#8-图型)
-    - [9.3 DP Problem Solving Steps](#93-dp-problem-solving-steps)
-    - [9.4 DFS with memorization](#94-dfs-with-memorization)
+    - [10.3 DP Problem Solving Steps](#103-dp-problem-solving-steps)
+    - [10.4 DFS with memorization](#104-dfs-with-memorization)
 
 ---
 
@@ -619,6 +621,7 @@ Valid Palindrome III $
        - remove element (one for elemement to be removed, one for iterating)
        - remove duplicates from sorted array ()
      - Two Diff
+     - [Sliding Window](#8-sliding-window)
 
    - Opposite directions
      - Quick Select: (Todo: quick select template)
@@ -637,9 +640,30 @@ Valid Palindrome III $
 
 <br/>
 
-## 8. Hash & Heap
+## 8. Sliding Window
 
 ### 8.1 Selected Questions
+
+[3. Longest Substring Without Repeating Characters](src/3.longest-substring-without-repeating-characters.py)
+
+[30. Substring with Concatenation of All Words](src/39.combination-sum.py)
+
+```
+76. Minimum Window Substring
+209. Minimum Size Subarray Sum
+239. Sliding Window Maximum
+340. Longest Substring with At Most K Distinct Characters
+395. Longest Substring with At Least K Repeating Characters
+438. Find All Anagrams in a String
+424. Longest Repeating Character Replacement
+904. Fruit Into Baskets
+1004. Max Consecutive Ones III
+1234. Replace the Substring for Balanced String
+```
+
+## 9. Hash & Heap
+
+### 9.1 Selected Questions
 
 [146. LRU Cache](src/146.lru-cache.py)
 
@@ -703,7 +727,7 @@ Valid Palindrome III $
 
 <br/>
 
-### 8.2 Python Implementation of Heap/Priority Queue
+### 9.2 Python Implementation of Heap/Priority Queue
 
 1. heapq (faster, recommended)
 
@@ -742,9 +766,9 @@ Notes:
 
 <br/>
 
-## 9. Dynamic Programming
+## 10. Dynamic Programming
 
-### 9.1 Fundamental Questions
+### 10.1 Fundamental Questions
 
 [509. Fibonacci Number](src/509.fibonacci-number.py)
 
@@ -768,18 +792,23 @@ Notes:
 256. Paint House
 ```
 
-### 9.2 DP Question Summary
+### 10.2 DP Question Summary
 <br>
 
 #### 1. Knapsack Problems
 
-Given a set of $n$ items, with each item $${\displaystyle 1\leq j\leq n}$$ having an associated profit $p_j$, weight $w_j$. The decision variable $x_j$ is used to select the item. The objective is to pick some of the items, with maximal total profit, while obeying that the maximum total weight of the chosen items must not exceed $W$.
+Given a set of $n$ items, with each item ${\displaystyle 1\leq j\leq n}$ having an associated profit $p_j$, weight $w_j$. The decision variable $x_j$ is used to select the item. The objective is to pick some of the items, with maximal total profit, while obeying that the maximum total weight of the chosen items must not exceed $W$.
 
 maximize ${\displaystyle \sum _{j=1}^{n}p_{j}x_{j}}$
 
 subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 
    ![image](img/knapsack.jpg)
+
+  > 状态: f[i][S]前i个物品, 取出一些能否组成和为S;<br>
+  > 方程: f[i][S] = f[i-1][S-a[i]] or f[i-1][S];<br> 
+  > 初始化: f[i][0]=true; f[0][1...target]=false;<br> 
+  > 答案: 检查所有f[n][j]
 
    - 0-1 Knapsack
   
@@ -815,12 +844,11 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
   
    - Unbounded Knapsack (完全背包)
      
-     $${\displaystyle 0\leq x_{j}\leq u_{j},x_{j}}$$ integral for all j
+     ${\displaystyle 0\leq x_{j}\leq u_{j},x_{j}}$ integral for all j
       
      [Bounded Knapsack](src/knapsack3.py)
 
-   状态: f[i][S]前i个物品, 取出一些能否组成和为S; 方程: f[i][S] = f[i-1][S-a[i]] or f[i-1][S]; 初始化: f[i][0]=true; f[0][1...target]=false; 答案: 检查所有f[n][j]
-    
+
     例题: card game II (LIntCode 1538), cutting a rod (LintCode 700)
     背包型DP大部分都能用滚动数组优化空间。
     Minimum Adjustment Cost
@@ -852,8 +880,6 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 
   [132. Palindrome Partitioning II *]
 
-  House Robber:
-
   [198. House Robber](src/198.house-robber.py)
 
   [213. House Robber II *](src/213.house-robber-ii.py)
@@ -872,8 +898,8 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 
 - 双序列
 
-  > 状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; 
-  > 方程: f[i][j] = 研究第i个和第j个的匹配关系; 
+  > 状态: f[i][j]表示第一个sequence的前i个数字/字符, 配上第二个sequence的前j个; <br>
+  > 方程: f[i][j] = 研究第i个和第j个的匹配关系; <br>
   > 初始化: f[i][0]和f[0][i]; 答案: f[n][m], 其中n = s1.length(); m = s2.length();
 
   Longest Common Subsequence
@@ -887,7 +913,7 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 #### 3. 前缀型: 前i个节点怎么怎么样, 分为匹配型和划分型
 - 匹配型
   
-  > dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值
+  > dp[i][j]表示word 1的前i个字符和word 2的前j个字符的最优xxx值<br>
   > 匹配型DP大部分都能用滚动数组优化空间。
    
   Longest Continuous Increasing Subsequence
@@ -904,7 +930,7 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 
 #### 4. 区间型
 
-  > 特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; 
+  > 特点: 1). 求一段区间的解max/min/count; 2). 转移方程通过区间更新; 3). 从大到小的更新; <br>
   > 这种题目共性就是区间最后求[0, n-1]这样一个区间逆向思维分析, 从大到小就能迎刃而解
 
   Stone game
@@ -917,14 +943,12 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 
 #### 5. 博弈型
 
-  > 状态: 定义一个人的状态; 
-  > 方程: 考虑两个人的状态做状态更新; 
-  > 初始化: 暂无; 
+  > 状态: 定义一个人的状态; <br>
+  > 方程: 考虑两个人的状态做状态更新; <br>
+  > 初始化: 暂无; <br>
   > 答案: 先思考最小状态, 再思考大的状态 -> 往小的递推, 适合记忆话搜索
 
   动态规划, 循环(从小到大递推), 记忆化搜索(从大到小搜索, 画搜索树); 什么时候 用记忆化搜索: 1). 状态转移特别麻烦, 不是顺序性, 2). 初始化状态不是很容易找到; 题目类型: 1). 博弈类问题, 2). 区间类问题; 适合解决题目: 1). 状态特别复杂, 2). 不好初始化
-  
-  coins in a line系列(中间有一道是区间型)
   
   Coins in a Line
   
@@ -943,7 +967,7 @@ subject to ${\displaystyle \sum _{j=1}^{n}w_{j}x_{j}\leq W}$
 #### 8. 图型
     例题: 图上的DP (面试基本不考)
 
-### 9.3 DP Problem Solving Steps
+### 10.3 DP Problem Solving Steps
 
 1. State definition: index and dp value
 2. State transition function
@@ -967,7 +991,7 @@ Extra credit:derive dp manually
 
 Debug: print dp
 
-### 9.4 DFS with memorization
+### 10.4 DFS with memorization
 
 1. Brute force DFS
    - Time complexity: `O(2^N)`, `N` = length of input
@@ -977,3 +1001,5 @@ Debug: print dp
    - `Value`: dfs return value
    - Prefer as many duplicate keys as possible
    - Time complexity: `O(N^2)` ??? (todo)
+
+<br/>
