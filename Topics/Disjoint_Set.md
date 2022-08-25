@@ -206,8 +206,20 @@ Find(4): 4 -> 3 -> 1 three steps
 ## Applications
 1. Detecting a Cycle: union two elements with the same parent 
 2. Connected component of undirected graph: find every node in graph and count # of sets
+3. Merge connected component
+
+## Questions
+
+[200. Number of Islands]
+
+[323. Number of Connected Components in an Undirected Graph]
+
+[684. Redundant Connection]
+
+[721. Accounts Merge]
 
 
 ## Resources
 1. https://www.youtube.com/watch?v=wU6udHRIkcc
 2. https://en.wikipedia.org/wiki/Disjoint-set_data_structure#Time_complexity
+3. https://leetcode.com/explore/featured/card/graph/618/disjoint-set/3881/
