@@ -1,9 +1,35 @@
 # Amazon
+- [Amazon](#amazon)
+  - [LC High Frequency Questions](#lc-high-frequency-questions)
+  - [Inverview Questions and Follow-Ups](#inverview-questions-and-follow-ups)
+    - [OA](#oa)
+    - [VO](#vo)
+    - [OOD](#ood)
 
-## LC High Frequent Questions
+## LC High Frequency Questions
 [239. Sliding Window Maximum *](../src/239.sliding-window-maximum.py)
 
-## OA
+[721. Account Merge]
+
+      Topic:
+        Connected Components
+
+      Tips:
+        1. Convert input into graph if not
+        2. Build adjacent list
+              adjacent = {node: [edges]}
+        3. seen
+              seen = {nodes}
+              seen = [False for _ in nodes]
+              seen = {node: 0 for node in nodes}
+        4. BFS/DFS/Disjoint Union Union (DUF)
+
+Similar Questions:
+
+[323. Number of Connected Components in an Undirected Graph](../src/323.number-of-connected-components-in-an-undirected-graph.py)
+
+## Inverview Questions and Follow-Ups
+### OA
 
 1. [Find Password Strength](oa1.find-password-strength.py)
 
@@ -25,7 +51,7 @@
    Follow up:
    - How to solve the problem in O(n) time? DP + dict to save the last index
 
-## Interview
+### VO
 
 1. [Valid Sudoku (Lc 36)](../src/36.valid-sudoku.py)
    
@@ -111,9 +137,11 @@
    
 8. [Word Search II (Lc 212)](../src/212.word-search-ii.py)
 
-9.  Meeting Room II
+9. [684. Redundant Connection](../src/684.redundant-connection.py)
+    
+10. Meeting Room II
 
-## OOD
+### OOD
 
 1. 设计一个游戏，有很多个岛。然后岛和岛之间有路。user可以选择交通工具，有车和热气球。然后一起从start island出发，每个user每次可以动一步，看谁先走到end island。
 按照步骤一点点设计，要有岛，user，和游戏的class。method就自己improvise就行了。这种open-ended的问题只要面试官觉得make sense，应该就差不多了。
