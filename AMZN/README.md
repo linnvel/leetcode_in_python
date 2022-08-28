@@ -1,20 +1,23 @@
 # Amazon
 - [Amazon](#amazon)
-  - [LC High Frequency Questions](#lc-high-frequency-questions)
+  - [Lc High Frequency Questions](#lc-high-frequency-questions)
   - [Inverview Questions and Follow-Ups](#inverview-questions-and-follow-ups)
     - [OA](#oa)
     - [VO](#vo)
     - [OOD](#ood)
 
-## LC High Frequency Questions
+## Lc High Frequency Questions
+
+[121. Best Time to Buy and Sell Stocks](../src/121.best-time-to-buy-and-sell-stock.py)
+
 [239. Sliding Window Maximum *](../src/239.sliding-window-maximum.py)
 
-[721. Account Merge]
+[721. Account Merge](../src/721.accounts-merge.py)
 
       Topic:
         Connected Components
 
-      Tips:
+      BFS/DFS Algorithm:
         1. Convert input into graph if not
         2. Build adjacent list
               adjacent = {node: [edges]}
@@ -22,11 +25,22 @@
               seen = {nodes}
               seen = [False for _ in nodes]
               seen = {node: 0 for node in nodes}
-        4. BFS/DFS/Disjoint Union Union (DUF)
+        4. BFS/DFS
+      
+      DUF algorithm:
+        1. Start with disjoint set with all nodes only
+        2. For each edge, union two nodes
+        3. Return # of sets
 
 Similar Questions:
 
 [323. Number of Connected Components in an Undirected Graph](../src/323.number-of-connected-components-in-an-undirected-graph.py)
+
+[49. Group Anagrams](../src/49.group-anagrams.py)
+
+387
+
+[1152. Analyze User Website Visit Pattern](../src/1152.analyze-user-website-visit-pattern.py)
 
 ## Inverview Questions and Follow-Ups
 ### OA
@@ -138,6 +152,8 @@ Similar Questions:
 8. [Word Search II (Lc 212)](../src/212.word-search-ii.py)
 
 9. [684. Redundant Connection](../src/684.redundant-connection.py)
+
+Similar: [685. Redundant Connection II](../src/685.redundant-connection-ii.py)
     
 10. Meeting Room II
 

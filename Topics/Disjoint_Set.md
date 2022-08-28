@@ -205,18 +205,18 @@ Find(4): 4 -> 3 -> 1 three steps
 
 ## Applications
 1. Detecting a Cycle: union two elements with the same parent 
-2. Connected component of undirected graph: find every node in graph and count # of sets
-3. Merge connected component
+2. Connected component of undirected graph: build set with find and union functions, count # of sets/roots
+3. Merge connected component: find every node, merge two nodes if they have the same parent
 
 ## Questions
 
-[200. Number of Islands]
+[200. Number of Islands](../src/200.number-of-islands.py)
 
-[323. Number of Connected Components in an Undirected Graph]
+[323. Number of Connected Components in an Undirected Graph](../src/323.number-of-connected-components-in-an-undirected-graph.py)
 
-[684. Redundant Connection]
+[684. Redundant Connection](../src/684.redundant-connection.py)
 
-[721. Accounts Merge]
+[721. Accounts Merge](../src/721.accounts-merge.py)
 
 
 ## Resources

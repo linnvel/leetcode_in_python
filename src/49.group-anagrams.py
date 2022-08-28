@@ -9,9 +9,11 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         word_map = {}
         for word in strs:
-            key = tuple(sorted(word)) # tuple is faster than "".join()
-            word_map[key] = word_map.get(key, []) + [word]
-        return list(word_map.values())
-        
+            key = "".join(sorted(list(word)))
+            if key not in word_map:
+                word_map[key] = [word]
+            else:
+                word_map[key].append(word)
+        return word_map.values()
 # @lc code=end
 
