@@ -32,15 +32,27 @@
         2. For each edge, union two nodes
         3. Return # of sets
 
-Similar Questions:
-
-[323. Number of Connected Components in an Undirected Graph](../src/323.number-of-connected-components-in-an-undirected-graph.py)
-
 [49. Group Anagrams](../src/49.group-anagrams.py)
 
-387
+[472. Concatenated Words](../src/472.concatenated-words.py)
+
+      Topic:
+        Word Split/Word Search
+
+      1. DFS
+      2. DFS with memorization
+      3. DFS + Trie (Todo)
+      4. DP (Todo)
+
+[139. Word Break](../src/139.word-break.py)
+
+[140. Word Break II](../src/140.word-break-ii.py)
 
 [1152. Analyze User Website Visit Pattern](../src/1152.analyze-user-website-visit-pattern.py)
+
+[2272. Substring With Largest Variance]
+
+[53. Maximum Subarray]
 
 ## Inverview Questions and Follow-Ups
 ### OA
@@ -81,7 +93,7 @@ Similar Questions:
 
    Similar:
 
-   [Lc 684. Redundant Connection](../src/684.redundant-connection.py)(to be optimized TT)
+   [Lc 684. Redundant Connection](../src/684.redundant-connection.py)
 
 3. [Compare Version Numbers (Lc 165)](../src/165.compare-version-numbers.py)
 
