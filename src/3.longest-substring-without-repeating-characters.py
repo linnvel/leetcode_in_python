@@ -9,8 +9,12 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         if len(s) <= 1:
             return len(s)
-
-        # Solution 1: dict
+        """
+        Solution 1: Sliding window with hashset
+        Time complexity : O(2n) = O(n). In the worst case each character will be visited twice by l and r.
+        Space complexity : O(min(m,n)). We need O(k) space for the sliding window, where k is the size of the Set. 
+        The size of the Set is upper bounded by the size of the string n and the size of the charset/alphabet m.
+        """
         # h = {s[0]: 0}
         # l, r = 0, 1
         # maxlen = 1
@@ -26,7 +30,9 @@ class Solution:
         # maxlen = max(maxlen, r - l)
         # return maxlen
 
-        # # Solution 2: queue
+        """
+        Solution 2: Sliding window with queue
+        """
         # from collections import deque
         # q = deque()
         # maxLen = 0
@@ -39,7 +45,11 @@ class Solution:
         #     q.append(element)
         # return max(maxLen, len(q))
 
-        # Solution 3: optimized dict (faster and cleaner)
+        """
+        Solution 3: Optimized Sliding window with hashset (faster and cleaner)
+        Time complexity : O(n). Index r will iterate n times.
+        Space complexity : O(min(m, n)). Same as the previous approach.
+        """
         h = {}
         l, r = 0, 0
         maxlen = 1
