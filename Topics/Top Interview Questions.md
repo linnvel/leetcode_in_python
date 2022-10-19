@@ -11,11 +11,13 @@ https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
       <th rowspan="2">Solution</th>
       <th colspan="2">Complexity</th>
       <th rowspan="2">Notes</th>
-      <th rowspan="2">Time</th>
+      <th colspan="2">Time</th>
     </tr>
     <tr>
       <th>Time</th>
       <th>Space</th>
+      <th>1st</th>
+      <th>2nd</th>
     </tr>
   </thead>
   <tbody>
@@ -36,8 +38,9 @@ https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
       <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/2.add-two-numbers.py>Solution</a></td>
       <td>O(n)</td>
       <td>O(n)</td>
-      <td>Follow up: Update list in-place to use less memory (todo)</td>
+      <td>Follow up: Update list in-place to use less memory</td>
       <td>5'48"</td>
+      <td>7'06"</td>
     </tr>
     <tr>
       <td>3. Longest Substring Without Repeating Characters</td>
@@ -62,7 +65,23 @@ https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
     <tr>
       <td></td>
       <td></td>
-      <td>Solution 2: binary search</td>
+      <td>Solution 2: find kth largest + binary search</td>
+      <td rowspan=>TBD</td>
+    </tr>
+    <tr>
+      <td rowspan="2">10. Regular Expression Matching</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/median-of-two-sorted-arrays>leetcode</a>
+      <td rowspan="2">Hard</td>
+      <td rowspan="2"><a href="">Solution</a></td>
+      <td>O()</td>
+      <td>O()</td>
+      <td>Solution 2: recursion</td>
+      <td rowspan=>23h36'33"</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Solution 2: DP</td>
       <td rowspan=>TBD</td>
     </tr>
     <tr>
