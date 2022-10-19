@@ -72,17 +72,17 @@ https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
       <td rowspan="2">10. Regular Expression Matching</td>
       <td rowspan="2"><a href=https://leetcode.com/problems/median-of-two-sorted-arrays>leetcode</a>
       <td rowspan="2">Hard</td>
-      <td rowspan="2"><a href="">Solution</a></td>
-      <td>O()</td>
-      <td>O()</td>
-      <td>Solution 2: recursion</td>
+      <td rowspan="2"><a href="https://github.com/linnvel/leetcode_in_python/blob/master/src/10.regular-expression-matching.py">Solution</a></td>
+      <td>O((T+P)*2^(T+P/2))</td>
+      <td>O((T+P)*2^(T+P/2))</td>
+      <td>Solution 1: recursion (DFS), <a href=https://levelup.gitconnected.com/solving-for-recursive-complexity-736439987cb0>complexity analysis</a></td>
       <td rowspan=>23h36'33"</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td>O(T*P)</td>
+      <td>O(T*P)</td>
       <td>Solution 2: DP</td>
-      <td rowspan=>TBD</td>
+      <td rowspan=>~10'</td>
     </tr>
     <tr>
       <td></td>
