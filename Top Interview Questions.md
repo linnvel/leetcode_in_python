@@ -1,10 +1,13 @@
 # Leetcode Top Interview Questions
 
-Problems list:<br>
+Problem list:<br>
 https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
 
 Time records:<br>
 https://leetplug.azurewebsites.net/data?userId=1704
+
+Error list:<br>
+https://leetcode.com/list/
 
 <table>
   <thead>
@@ -72,7 +75,7 @@ https://leetplug.azurewebsites.net/data?userId=1704
     <tr>
       <td></td>
       <td></td>
-      <td>Solution 2: find kth largest + binary search</td>
+      <td>Solution 2: find kth largest + binary search (Todo)</td>
       <td></td>
       <td></td>
     </tr>
@@ -139,6 +142,45 @@ https://leetplug.azurewebsites.net/data?userId=1704
       <td></td>
     </tr>
     <tr>
+      <td>14. Longest Common Prefix</td>
+      <td><a href=https://leetcode.com/problems/longest-common-prefix>leetcode</a>
+      <td>Easy</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/14.longest-common-prefix.py>Solution</a></td>
+      <td>O(S)</td>
+      <td>O(1)</td>
+      <td></td>
+      <td>7'11"</td>
+      <td></td>
+    </tr>   
+    <tr>
+      <td>19. Remove Nth Node From End of List</td>
+      <td><a href=https://leetcode.com/problems/remove-nth-node-from-end-of-list>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/19.remove-nth-node-from-end-of-list.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>One path solution - fast/slow pointers: n steps ahead</td>
+      <td>30'</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">28. Find the Index of the First Occurrence in a String</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string>leetcode</a>
+      <td rowspan="2">Medium</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/28.find-the-index-of-the-first-occurrence-in-a-string.py>Solution</a></td>
+      <td>O(mn)</td>
+      <td>O(1)</td>
+      <td>Solution 1: brute force</td>
+      <td>8'20"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>O(n+m)</td>
+      <td>O(n)</td>
+      <td><a href=https://www.youtube.com/watch?v=GTJr8OvyEVQ>Solution 2: KMP pattern match</a></td>
+      <td></td>
+      <td></td>
+    </tr>    <tr>
       <td></td>
       <td><a href=>leetcode</a>
       <td>Medium</td>
