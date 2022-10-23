@@ -1,6 +1,10 @@
 # Leetcode Top Interview Questions
 
+Problems list:<br>
 https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
+
+Time records:<br>
+https://leetplug.azurewebsites.net/data?userId=1704
 
 <table>
   <thead>
@@ -69,6 +73,16 @@ https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
       <td rowspan=>TBD</td>
     </tr>
     <tr>
+      <td>7. Reverse Integer</td>
+      <td><a href=https://leetcode.com/problems/reverse-integer>leetcode</a>
+      <td>Medium</td>
+      <td><a href=>Solution</a></td>
+      <td>O(lg(x))</td>
+      <td>O(1)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
       <td rowspan="2">10. Regular Expression Matching</td>
       <td rowspan="2"><a href=https://leetcode.com/problems/median-of-two-sorted-arrays>leetcode</a>
       <td rowspan="2">Hard</td>
@@ -82,12 +96,32 @@ https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
       <td>O(T*P)</td>
       <td>O(T*P)</td>
       <td>Solution 2: DP</td>
-      <td rowspan=>~10'</td>
+      <td rowspan=></td>
+    </tr>
+    <tr>
+      <td>8. String to Integer (atoi)</td>
+      <td><a href=https://leetcode.com/problems/string-to-integer-atoi>leetcode</a>
+      <td>Medium</td>
+      <td><a href=>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>Overflow condition: ans > MAX_INT // 10 or (ans == MAX_INT // 10 and d > 7)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11. Container With Most Water</td>
+      <td><a href=https://leetcode.com/problems/container-with-most-water>leetcode</a>
+      <td>Medium</td>
+      <td><a href=>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td><a href=https://leetcode.com/problems/container-with-most-water/discuss/6100/Simple-and-clear-proofexplanation/880632>Greedy solution explanation</a>: let say (0,8) height[0] is less than height[8], so no need to check for (0,1) ... (0,7) because width = j-i is going to decrease and height = min(height[i],height[j]) will either remain constant or decrease.</td>
+      <td></td>
     </tr>
     <tr>
       <td></td>
       <td><a href=>leetcode</a>
-      <td></td>
+      <td>Medium</td>
       <td><a href=>Solution</a></td>
       <td>O()</td>
       <td>O()</td>
