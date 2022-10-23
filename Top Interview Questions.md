@@ -6,7 +6,7 @@ https://leetcode.com/problem-list/top-interview-questions/?sorting=W3t9XQ%3D%3D
 Time records:<br>
 https://leetplug.azurewebsites.net/data?userId=1704
 
-<table border="1">
+<table>
   <thead>
     <tr>
       <th rowspan="2">Problem</th>
