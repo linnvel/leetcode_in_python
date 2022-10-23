@@ -34,6 +34,7 @@ https://leetplug.azurewebsites.net/data?userId=1704
       <td>O(n)</td>
       <td>Unique array: hashset<br>Sorted array: two pointers</td>
       <td>1'42"</td>
+      <td></td>
     </tr>
     <tr>
       <td>2. Add Two Numbers</td>
