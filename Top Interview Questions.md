@@ -153,6 +153,17 @@ https://leetcode.com/list/
       <td></td>
     </tr>   
     <tr>
+      <td>17. Letter Combinations of a Phone Number</td>
+      <td><a href=https://leetcode.com/problems/letter-combinations-of-a-phone-number>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/17.letter-combinations-of-a-phone-number.py>Solution</a></td>
+      <td>O(4^n)</td>
+      <td>O(4^n)</td>
+      <td>DFS</td>
+      <td>34'19"</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>19. Remove Nth Node From End of List</td>
       <td><a href=https://leetcode.com/problems/remove-nth-node-from-end-of-list>leetcode</a>
       <td>Medium</td>
@@ -161,6 +172,17 @@ https://leetcode.com/list/
       <td>O(1)</td>
       <td>One path solution - fast/slow pointers: n steps ahead</td>
       <td>30'</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>20. Valid Parentheses</td>
+      <td><a href=https://leetcode.com/problems/valid-parentheses>leetcode</a>
+      <td>Easy</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/20.valid-parentheses.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>Stack</td>
+      <td>3'47"</td>
       <td></td>
     </tr>
     <tr>
@@ -180,7 +202,8 @@ https://leetcode.com/list/
       <td><a href=https://www.youtube.com/watch?v=GTJr8OvyEVQ>Solution 2: KMP pattern match</a></td>
       <td></td>
       <td></td>
-    </tr>    <tr>
+    </tr>    
+    <tr>
       <td></td>
       <td><a href=>leetcode</a>
       <td>Medium</td>

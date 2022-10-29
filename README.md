@@ -1,6 +1,7 @@
 # Leetcode Notes
 
 - [Leetcode Notes](#leetcode-notes)
+  - [References](#references)
   - [1. Backtracking](#1-backtracking)
     - [1.1 Selected Questions](#11-selected-questions)
     - [1.2 Backtracking Template](#12-backtracking-template)
@@ -42,6 +43,9 @@
     - [10.4 DFS with memorization](#104-dfs-with-memorization)
 
 ---
+## References
+
+Python time complexity: https://wiki.python.org/moin/TimeComplexity
 
 ## 1. Backtracking
 
