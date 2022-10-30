@@ -16,13 +16,12 @@ https://leetcode.com/list/
       <th rowspan="2">Link</th>
       <th rowspan="2">Difficulty</th>
       <th rowspan="2">Solution</th>
-      <th colspan="2">Complexity</th>
+      <th rowspan="2">Time Complexity</th>
+      <th rowspan="2">Space Complexity</th>
       <th rowspan="2">Notes</th>
       <th colspan="2">Time</th>
     </tr>
     <tr>
-      <th>Time</th>
-      <th>Space</th>
       <th>1st</th>
       <th>2nd</th>
     </tr>
@@ -183,6 +182,33 @@ https://leetcode.com/list/
       <td>O(n)</td>
       <td>Stack</td>
       <td>3'47"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">21. Merge Two Sorted Lists</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/merge-two-sorted-lists>leetcode</a>
+      <td rowspan="2">Easy</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/21.merge-two-sorted-lists.py>Solution</a></td>
+      <td rowspan="2">O(n)</td>
+      <td rowspan="2">O(1)</td>
+      <td>Solution 1: dummy node</td>
+      <td>13'33"</td>
+      <td></td>
+    </tr>
+    <tr>
+    <td>Solution 2: without dummy node</td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+      <td>22. Generate Parentheses</td>
+      <td><a href=https://leetcode.com/problems/generate-parentheses>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/22.generate-parentheses.py>Solution</a></td>
+      <td>O(4^n/sqrt(n))</td>
+      <td>O(4^n/sqrt(n))</td>
+      <td>DFS</td>
+      <td>4'1"</td>
       <td></td>
     </tr>
     <tr>
