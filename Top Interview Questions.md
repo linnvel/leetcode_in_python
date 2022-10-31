@@ -230,6 +230,17 @@ https://leetcode.com/list/
       <td></td>
     </tr>    
     <tr>
+      <td>29. Divide Two Integers</td>
+      <td><a href=https://leetcode.com/problems/divide-two-integers>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/29.divide-two-integers.py>Solution</a></td>
+      <td>???</td>
+      <td>O(1)</td>
+      <td>E.g. 58 = 2^3*5 + 2^0*5 + 3 = (2^3 + 2^0) * 5 + 3 => quotient = 2^3 + 2^0</td>
+      <td>>24h</td>
+      <td></td>
+    </tr>
+    <tr>
       <td></td>
       <td><a href=>leetcode</a>
       <td>Medium</td>
