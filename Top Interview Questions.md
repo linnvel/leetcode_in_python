@@ -212,6 +212,42 @@ https://leetcode.com/list/
       <td></td>
     </tr>
     <tr>
+      <td rowspan="3">23. Merge k Sorted Lists</td>
+      <td rowspan="3"><a href=https://leetcode.com/problems/merge-k-sorted-lists>leetcode</a>
+      <td rowspan="3">Hard</td>
+      <td rowspan="3"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/23.merge-k-sorted-lists.py>Solution</a></td>
+      <td>O(Nlogk)</td>
+      <td>O(Nlogk)</td>
+      <td>Solution 1: Divide and conquer (top down recursion)</td>
+      <td>10'12"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>O(Nlogk)</td>
+      <td>O(1)</td>
+      <td>Solution 2: Merge sort (Bottom up iteration)</a></td>
+      <td>10'4"</td>
+      <td></td>
+    </tr>   
+    <tr>
+      <td>O()</td>
+      <td>O()</td>
+      <td>Solution 3: Priority queue (todo)</a></td>
+      <td></td>
+      <td></td>
+    </tr>   
+    <tr>
+      <td>26. Remove Duplicates from Sorted Array</td>
+      <td><a href=https://leetcode.com/problems/remove-duplicates-from-sorted-array>leetcode</a>
+      <td>Easy</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/26.remove-duplicates-from-sorted-array.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
       <td rowspan="2">28. Find the Index of the First Occurrence in a String</td>
       <td rowspan="2"><a href=https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string>leetcode</a>
       <td rowspan="2">Medium</td>
