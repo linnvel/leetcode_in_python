@@ -277,6 +277,51 @@ https://leetcode.com/list/
       <td></td>
     </tr>
     <tr>
+      <td>33. Search in Rotated Sorted Array</td>
+      <td><a href=https://leetcode.com/problems/search-in-rotated-sorted-array>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/33.search-in-rotated-sorted-array.py>Solution</a></td>
+      <td>O(logn)</td>
+      <td>O(1)</td>
+      <td></td>
+      <td>20'4"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>34. Find First and Last Position of Element in Sorted Array</td>
+      <td><a href=https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/34.find-first-and-last-position-of-element-in-sorted-array.py>Solution</a></td>
+      <td>O(logn)</td>
+      <td>O(1)</td>
+      <td>Binary search</td>
+      <td>13'40"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>36. Valid Sudoku</td>
+      <td><a href=https://leetcode.com/problems/valid-sudoku>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/36.valid-sudoku.py>Solution</a></td>
+      <td>O(n^2)</td>
+      <td>O(n^2)</td>
+      <td></td>
+      <td>27'41"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>48. Rotate Image</td>
+      <td><a href=https://leetcode.com/problems/rotate-image>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/48.rotate-image.py>Solution</a></td>
+      <td>O(n^2)</td>
+      <td>O(1)</td>
+      <td>Solution 1: rotate groups of four cells; <br>
+      Solution 2: reverse diagonal + reverse left to right (i.e. transpose + reflect)</td>
+      <td>23'50"</td>
+      <td></td>
+    </tr>
+    <tr>
       <td></td>
       <td><a href=>leetcode</a>
       <td>Medium</td>
