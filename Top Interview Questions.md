@@ -114,7 +114,7 @@ https://leetcode.com/list/
     <tr>
       <td>O(T*P)</td>
       <td>O(T*P)</td>
-      <td>Solution 2: DP</td>
+      <td>Solution 2: DFS with memorization</td>
       <td></td>
       <td></td>
     </tr>
@@ -310,6 +310,67 @@ https://leetcode.com/list/
       <td></td>
     </tr>
     <tr>
+      <td rowspan="3">42. Trapping Rain Water</td>
+      <td rowspan="3"><a href=https://leetcode.com/problems/trapping-rain-water>leetcode</a>
+      <td rowspan="3">Hard</td>
+      <td rowspan="3"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/42.trapping-rain-water.py>Solution</a></td>
+      <td>O(n^2)</td>
+      <td>O(1)</td>
+      <td>Solution 1: Brute force (TLE)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>Solution 2: DP</a></td>
+      <td>1h8'32"</td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>Solution 3: DP space optimization</a></td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td rowspan="3">44. Wildcard Matching</td>
+      <td rowspan="3"><a href=https://leetcode.com/problems/wildcard-matching>leetcode</a>
+      <td rowspan="3">Hard</td>
+      <td rowspan="3"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/44.wildcard-matching.py>Solution</a></td>
+      <td>O()</td>
+      <td>O()</td>
+      <td>Solution 1: DFS (TLE)</td>
+      <td></td>
+      <td></td>
+    </tr>   
+    <tr>
+      <td>O(m*n)</td>
+      <td>O(m*n)</td>
+      <td>Solution 2: DFS with memorization (@lru_cache decorator)</a></td>
+      <td>52'38"</td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>O(m*n)</td>
+      <td>O(m*n)</td>
+      <td>Solution 3: 2d DP</a></td>
+      <td></td>
+      <td></td>
+    </tr>   
+    <tr>
+      <td>46. Permutations</td>
+      <td><a href=https://leetcode.com/problems/permutations>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/46.permutations.py>Solution</a></td>
+      <td>O(2^n)</td>
+      <td>O(2^n)</td>
+      <td>Backtracking + seen</td>
+      <td>7'32"</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>48. Rotate Image</td>
       <td><a href=https://leetcode.com/problems/rotate-image>leetcode</a>
       <td>Medium</td>
@@ -320,7 +381,7 @@ https://leetcode.com/list/
       Solution 2: reverse diagonal + reverse left to right (i.e. transpose + reflect)</td>
       <td>23'50"</td>
       <td></td>
-    </tr>
+    </tr>    
     <tr>
       <td></td>
       <td><a href=>leetcode</a>
