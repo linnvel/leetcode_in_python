@@ -383,6 +383,70 @@ https://leetcode.com/list/
       <td></td>
     </tr>    
     <tr>
+      <td>49. Group Anagrams</td>
+      <td><a href=https://leetcode.com/problems/group-anagrams>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/49.group-anagrams.py>Solution</a></td>
+      <td>O(nlogk)</td>
+      <td>O(nk)</td>
+      <td>Hashmap</td>
+      <td>2'40"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>50. Pow(x, n)</td>
+      <td><a href=https://leetcode.com/problems/powx-n>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/50.pow-x-n.py>Solution</a></td>
+      <td>O(logn)</td>
+      <td>O(1)</td>
+      <td>recursion/iteration</td>
+      <td>32'4"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">53. Maximum Subarray</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/maximum-subarray>leetcode</a>
+      <td rowspan="2">Medium</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/53.maximum-subarray.py>Solution</a></td>
+      <td rowspan="2">O(n)</td>
+      <td rowspan="2">O(1)</td>
+      <td>Solution 1: prefix sum<br>
+      prefixSum = sum(nums[:i])<br>
+      maxSum = max(maxSum, prefixSum - minPrefixSum)<br>
+      minPrefixSum = min(minPrefixSum, prefixSum)
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Solution 2: DP<br> 
+      dp[i] = max sum of subarrary ended by nums[i]<br>
+      dp[0] = nums[0]<br>
+      ans = max(dp)
+      </td>
+      <td>16'1"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">54. Spiral Matrix</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/spiral-matrix>leetcode</a>
+      <td rowspan="2">Medium</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/54.spiral-matrix.py>Solution</a></td>
+      <td>O(mn^2)???</td>
+      <td>O(mn)</td>
+      <td>Solution 1: pop first row + rotation (recursion/iteration)</td>
+      <td>6h8'22"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>O(mn)</td>
+      <td>O(mn)</td>
+      <td>Solution 2: Simulation</td>
+      <td>TBD</td>
+      <td></td>
+    </tr>
+    <tr>
       <td></td>
       <td><a href=>leetcode</a>
       <td>Medium</td>
