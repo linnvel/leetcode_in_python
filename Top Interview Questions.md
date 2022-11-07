@@ -310,6 +310,17 @@ https://leetcode.com/list/
       <td></td>
     </tr>
     <tr>
+      <td>41. First Missing Positive</td>
+      <td><a href=https://leetcode.com/problems/first-missing-positive>leetcode</a>
+      <td>Hard</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/41.first-missing-positive.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>Trick: use nums array as hash table to record if a num exists or not</td>
+      <td>34'52"</td>
+      <td></td>
+    </tr>
+    <tr>
       <td rowspan="3">42. Trapping Rain Water</td>
       <td rowspan="3"><a href=https://leetcode.com/problems/trapping-rain-water>leetcode</a>
       <td rowspan="3">Hard</td>
