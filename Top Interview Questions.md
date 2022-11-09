@@ -458,6 +458,109 @@ https://leetcode.com/list/
       <td></td>
     </tr>
     <tr>
+      <td rowspan="2">55. Jump Game</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/jump-game>leetcode</a>
+      <td rowspan="2">Medium</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/55.jump-game.py>Solution</a></td>
+      <td>O(n^2)</td>
+      <td>O(n)</td>
+      <td>Solution 1: DP (TLE)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>Solution 2: Greedy</td>
+      <td>12'57"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">56. Merge Intervals</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/merge-intervals>leetcode</a>
+      <td rowspan="2">Medium</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/56.merge-intervals.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>Solution 1: sort + recursion/iteration</td>
+      <td>17'34"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Solution 2: connected region</td>
+      <td>TBD</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">62. Unique Paths</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/unique-paths>leetcode</a>
+      <td rowspan="2">Medium</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/62.unique-paths.py>Solution</a></td>
+      <td>O(mn)</td>
+      <td>O(n)</td>
+      <td>Solution 1: DP<br>
+      dp[i][j] = # of paths to (i, j) => dp[j]
+      </td>
+      <td>37'27"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>O(1)</td>
+      <td>O(1)</td>
+      <td>Solution 2: math</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>66. Plus One</td>
+      <td><a href=https://leetcode.com/problems/plus-one>leetcode</a>
+      <td>Easy</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/66.plus-one.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>Solution 1: iteration + carry; Solution 2: convert to int</td>
+      <td>3'35"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">69. Sqrt(x)</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/sqrtx>leetcode</a>
+      <td rowspan="2">Easy</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/69.sqrt-x.py>Solution</a></td>
+      <td>O(logx)</td>
+      <td>O(1)</td>
+      <td>Solution 1: binary search</td>
+      <td>~10'</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>O(1)</td>
+      <td>O(1)</td>
+      <td>Solution 2: Newton method</td>
+      <td>TBD</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">73. Set Matrix Zeroes</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/set-matrix-zeroes>leetcode</a>
+      <td rowspan="2">Medium</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/>Solution</a></td>
+      <td>O(mn)</td>
+      <td>O(m + n)</td>
+      <td>Solution 1</td>
+      <td>29'7"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>O(1)</td>
+      <td>Solution 2: constant space</td>
+      <td>TBD</td>
+      <td></td>
+    </tr>
+    <tr>
       <td></td>
       <td><a href=>leetcode</a>
       <td>Medium</td>
@@ -469,4 +572,4 @@ https://leetcode.com/list/
       <td></td>
     </tr>
   </tbody>
-</table>  
+</table>

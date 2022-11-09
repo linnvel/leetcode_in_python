@@ -17,7 +17,7 @@ class Solution:
         #             break
         # return dp[len(nums) - 1]
         
-        # Solution 2: greedy (Todo)
+        # Solution 2: greedy
         maxStep = 0
         for i, num in enumerate(nums):
             if i > maxStep:
