@@ -29,3 +29,16 @@
     ```
 
     Todo: union find
+
+* [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-interview-150)
+  
+  Tricks:
+  1) Start with widest container
+  2) Move one step in for the size with smaller height
+
+* [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-interview-150)
+
+  Tricks:
+  1) Two pointers for the substring
+  2) A dictionary to check repeating characters
+  3) Optimization: update left pointer for repeating characters instead of deleting in dictionary (to avoid the inner loop)

@@ -25,6 +25,7 @@
     - [7.2 Array Question Summary](#72-array-question-summary)
   - [8. Sliding Window](#8-sliding-window)
     - [8.1 Selected Questions](#81-selected-questions)
+    - [8.2 Sliding Window Template](#82-sliding-window-template)
   - [9. Hash & Heap](#9-hash--heap)
     - [9.1 Selected Questions](#91-selected-questions)
     - [9.2 Python Implementation of Heap/Priority Queue](#92-python-implementation-of-heappriority-queue)
@@ -652,18 +653,44 @@ Valid Palindrome III $
 
 [30. Substring with Concatenation of All Words](src/39.combination-sum.py)
 
+[76. Minimum Window Substring *](src/76.minimum-window-substring.py)
+
+[209. Minimum Size Subarray Sum](src/209.minimum-size-subarray-sum.py)
+
+[438. Find All Anagrams in a String](src/438.find-all-anagrams-in-a-string.py)
+
+[1004. Max Consecutive Ones III](src/1004.max-consecutive-ones-iii.pyq)
 ```
-76. Minimum Window Substring
-209. Minimum Size Subarray Sum
-239. Sliding Window Maximum
-340. Longest Substring with At Most K Distinct Characters
+239. Sliding Window Maximum *
+340. Longest Substring with At Most K Distinct Characters $
 395. Longest Substring with At Least K Repeating Characters
-438. Find All Anagrams in a String
 424. Longest Repeating Character Replacement
 904. Fruit Into Baskets
-1004. Max Consecutive Ones III
 1234. Replace the Substring for Balanced String
 ```
+
+### 8.2 Sliding Window Template
+
+1. Two pointers:
+   - `right`: expand the current window
+   - `left`: contract the current window
+2. At any point in time only one of these pointers move and the other one remains fixed.
+3. Algorithm:
+   - Initialize left = right = 0
+   - Keep expanding the window by moving `right` until we get a desirable window.
+   - Once we have a wesirable window, move `left` ahead. If the window is still a desirable one, we keep on contracting the window.
+   - If the window is not desirable any more, we repeat the second step onwards.
+4. Pseudo-code:
+    ```python
+    l, r = 0, 0
+    while r < len(s):
+        update window with s[r]  # expand
+        while window is desirable:
+            update result
+            update window with s[l]  # contract
+            l -= 1
+        r += 1
+    ```
 
 ## 9. Hash & Heap
 

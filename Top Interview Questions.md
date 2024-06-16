@@ -453,7 +453,7 @@ https://leetcode.com/list/
     <tr>
       <td>O(mn)</td>
       <td>O(mn)</td>
-      <td>Solution 2: Simulation</td>
+      <td>Solution 2: Simulation<br>Impl 1: yield<br>Impl 2: direction vector + seen matrix</td>
       <td>TBD</td>
       <td></td>
     </tr>
@@ -546,18 +546,40 @@ https://leetcode.com/list/
       <td rowspan="2">73. Set Matrix Zeroes</td>
       <td rowspan="2"><a href=https://leetcode.com/problems/set-matrix-zeroes>leetcode</a>
       <td rowspan="2">Medium</td>
-      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/>Solution</a></td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/set-matrix-zeroes/submissions/1283133035/?envType=study-plan-v2&envId=top-interview-150>Solution 1<br><a href=https://leetcode.com/problems/set-matrix-zeroes/solutions/3472518/full-explanation-super-easy-constant-space/?envType=study-plan-v2&envId=top-interview-150>Solution 2</a></td>
       <td>O(mn)</td>
       <td>O(m + n)</td>
-      <td>Solution 1</td>
+      <td>Solution 1: rol + col vectors</td>
       <td>29'7"</td>
       <td></td>
     </tr>
     <tr>
-      <td></td>
+      <td>O(mn)</td>
       <td>O(1)</td>
-      <td>Solution 2: constant space</td>
+      <td>Solution 2: constant space<br>Impl 1: iterate over rows/cols separately and replace seen cells<br>Impl 2: save rol/col vector in first row/col + an extra virable for the first cell </td>
       <td>TBD</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>75. Sort Colors</td>
+      <td><a href=https://leetcode.com/problems/sort-colors>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/75.sort-colors.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>partition + two pointers</td>
+      <td>5'39"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>78. Subsets</td>
+      <td><a href=https://leetcode.com/problems/subsets>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/78.subsets.py>Solution</a></td>
+      <td>O(n * 2^n)</td>
+      <td>O(n * 2^n)</td>
+      <td>DFS</td>
+      <td>2'49"</td>
       <td></td>
     </tr>
     <tr>
