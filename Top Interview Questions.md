@@ -400,7 +400,7 @@ https://leetcode.com/list/
       <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/49.group-anagrams.py>Solution</a></td>
       <td>O(nlogk)</td>
       <td>O(nk)</td>
-      <td>Hashmap</td>
+      <td>Hashmap: using sorted work as key for anagram and list of words as value</td>
       <td>2'40"</td>
       <td></td>
     </tr>
@@ -480,7 +480,7 @@ https://leetcode.com/list/
       <td rowspan="2"><a href=https://leetcode.com/problems/merge-intervals>leetcode</a>
       <td rowspan="2">Medium</td>
       <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/56.merge-intervals.py>Solution</a></td>
-      <td>O(n)</td>
+      <td>O(nlogn)</td>
       <td>O(n)</td>
       <td>Solution 1: sort + recursion/iteration</td>
       <td>17'34"</td>
@@ -583,8 +583,88 @@ https://leetcode.com/list/
       <td></td>
     </tr>
     <tr>
+      <td rowspan="2">128. Longest Consecutive Sequence</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/longest-consecutive-sequence>leetcode</a>
+      <td rowspan="2">Medium</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/128.longest-consecutive-sequence.py>Solution</a></td>
+      <td>O(nlogn)</td>
+      <td>O(1)</td>
+      <td>Solution 1: Sort</td>
       <td></td>
-      <td><a href=>leetcode</a>
+      <td></td>
+    </tr>
+    <tr>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>Solution 2: Hashset + only search for the smallest value of a consecutive sequence (loop only if num - 1 not in hashset)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">202. Happy Number</td>
+      <td rowspan="2"><a href=https://leetcode.com/problems/happy-number>leetcode</a>
+      <td rowspan="2">Easy</td>
+      <td rowspan="2"><a href=https://github.com/linnvel/leetcode_in_python/blob/master/202.happy-number.py>Solution</a></td>
+      <td>O(1)</td>
+      <td>O(n)?</td>
+      <td>Solution 1: hash map </td>
+      <td></td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>Solution 2: find cycle in linked list<br> - two pointers: next_result (one step) & next_next_result(two steps)<br> - condition of circle: next_result == next_next_result<br>- condition of happy number: next_next_result == 1</td>
+      <td>TBD</td>
+      <td></td>
+    </tr>  
+    <tr>
+      <td>219. Contains Duplicate II</td>
+      <td><a href=https://leetcode.com/problems/contains-duplicate-ii>leetcode</a>
+      <td>Easy</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/219.contains-duplicate-ii.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>Hashmap</td>
+      <td></td>
+      <td></td>
+    </tr> 
+    <tr>
+      <td>228. Summary Ranges</td>
+      <td><a href=https://leetcode.com/problems/summary-ranges>leetcode</a>
+      <td>Easy</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/228.summary-ranges.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>Two pointers</td>
+      <td></td>
+      <td></td>
+    </tr>          
+    <tr>
+      <td>242. Valid Anagram</td>
+      <td><a href=https://leetcode.com/problems/valid-anagram>leetcode</a>
+      <td>Easy</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/242.valid-anagram.py>Solution</a></td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>Faster implementation: using two dicts and comparing dicts directly </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>289. Game of Life</td>
+      <td><a href=https://leetcode.com/problems/game-of-life>leetcode</a>
+      <td>Medium</td>
+      <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/src/289.game-of-life.py>Solution</a></td>
+      <td>O(m*n)</td>
+      <td>O(1)</td>
+      <td>Using special marks for changing cells and loop matrix twice</td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <td></td>
+      <td><a href=https://leetcode.com/problems/>leetcode</a>
       <td>Medium</td>
       <td><a href=https://github.com/linnvel/leetcode_in_python/blob/master/>Solution</a></td>
       <td>O()</td>
